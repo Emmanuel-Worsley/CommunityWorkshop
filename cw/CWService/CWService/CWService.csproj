@@ -84,6 +84,7 @@
     <Content Include="App_Data\community_workshop_database.sql" />
     <Content Include="CWDataService.asmx" />
     <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +101,9 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employees.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Loans.cs" />
     <Compile Include="Model\Database.cs" />
     <Compile Include="Tools.cs" />

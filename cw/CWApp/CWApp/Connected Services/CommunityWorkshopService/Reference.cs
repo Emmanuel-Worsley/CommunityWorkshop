@@ -808,12 +808,12 @@ namespace CWApp.CommunityWorkshopService {
         public string comment;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public bool active;
+        public int active;
         
         public InsertToolRequestBody() {
         }
         
-        public InsertToolRequestBody(string brandID, string toolType, string comment, bool active) {
+        public InsertToolRequestBody(string brandID, string toolType, string comment, int active) {
             this.brandID = brandID;
             this.toolType = toolType;
             this.comment = comment;
@@ -878,7 +878,7 @@ namespace CWApp.CommunityWorkshopService {
         public string description;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool active;
+        public int active;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string toolID;
@@ -886,7 +886,7 @@ namespace CWApp.CommunityWorkshopService {
         public UpdateToolRequestBody() {
         }
         
-        public UpdateToolRequestBody(string brandID, string description, bool active, string toolID) {
+        public UpdateToolRequestBody(string brandID, string description, int active, string toolID) {
             this.brandID = brandID;
             this.description = description;
             this.active = active;
@@ -2350,7 +2350,7 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.InsertTool(request);
         }
         
-        public void InsertTool(string brandID, string toolType, string comment, bool active) {
+        public void InsertTool(string brandID, string toolType, string comment, int active) {
             CWApp.CommunityWorkshopService.InsertToolRequest inValue = new CWApp.CommunityWorkshopService.InsertToolRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.InsertToolRequestBody();
             inValue.Body.brandID = brandID;
@@ -2365,7 +2365,7 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.InsertToolAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.InsertToolResponse> InsertToolAsync(string brandID, string toolType, string comment, bool active) {
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.InsertToolResponse> InsertToolAsync(string brandID, string toolType, string comment, int active) {
             CWApp.CommunityWorkshopService.InsertToolRequest inValue = new CWApp.CommunityWorkshopService.InsertToolRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.InsertToolRequestBody();
             inValue.Body.brandID = brandID;
@@ -2380,7 +2380,7 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.UpdateTool(request);
         }
         
-        public void UpdateTool(string brandID, string description, bool active, string toolID) {
+        public void UpdateTool(string brandID, string description, int active, string toolID) {
             CWApp.CommunityWorkshopService.UpdateToolRequest inValue = new CWApp.CommunityWorkshopService.UpdateToolRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.UpdateToolRequestBody();
             inValue.Body.brandID = brandID;
@@ -2395,7 +2395,7 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.UpdateToolAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateToolResponse> UpdateToolAsync(string brandID, string description, bool active, string toolID) {
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateToolResponse> UpdateToolAsync(string brandID, string description, int active, string toolID) {
             CWApp.CommunityWorkshopService.UpdateToolRequest inValue = new CWApp.CommunityWorkshopService.UpdateToolRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.UpdateToolRequestBody();
             inValue.Body.brandID = brandID;

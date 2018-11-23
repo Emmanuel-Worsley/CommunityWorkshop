@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CWApp
+namespace CWApp.Website
 {
 
 
-    public partial class WebForm1
+    public partial class Main
     {
     }
 }

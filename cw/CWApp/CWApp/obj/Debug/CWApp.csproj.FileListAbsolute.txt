@@ -56,3 +56,119 @@ E:\Tafe assignment progress\Michaels Assessment\CWApp\CWApp\obj\Debug\CWApp.cspr
 E:\Tafe assignment progress\Michaels Assessment\CWApp\CWApp\obj\Debug\CWApp.csproj.CopyComplete
 E:\Tafe assignment progress\Michaels Assessment\CWApp\CWApp\obj\Debug\CWApp.dll
 E:\Tafe assignment progress\Michaels Assessment\CWApp\CWApp\obj\Debug\CWApp.pdb
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\CWApp.dll.config
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\CWApp.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\CWApp.pdb
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\csc.exe
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\csc.exe.config
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\csc.rsp
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\csi.exe
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\csi.exe.config
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\csi.rsp
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.AppContext.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Collections.Immutable.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Console.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Diagnostics.Process.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.IO.Compression.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.IO.FileSystem.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.IO.Pipes.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Reflection.Metadata.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Security.AccessControl.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Security.Claims.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Threading.Thread.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.ValueTuple.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Xml.XPath.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\vbc.exe
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\vbc.exe.config
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\vbc.rsp
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\VBCSCompiler.exe
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\roslyn\VBCSCompiler.exe.config
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\obj\Debug\CWApp.csprojAssemblyReference.cache
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\obj\Debug\CWApp.csproj.CoreCompileInputs.cache
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\obj\Debug\CWApp.csproj.CopyComplete
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\obj\Debug\CWApp.dll
+E:\Tafe assignment progress\Michaels Assessment\CW\CWApp\CWApp\obj\Debug\CWApp.pdb
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\obj\Debug\CWApp.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\CWApp.dll.config
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\CWApp.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\CWApp.pdb
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\csc.exe
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\csc.exe.config
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\csc.rsp
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\csi.exe
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\csi.exe.config
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\csi.rsp
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.AppContext.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Console.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\vbc.exe
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\vbc.exe.config
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\vbc.rsp
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\obj\Debug\CWApp.csproj.CopyComplete
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\obj\Debug\CWApp.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\obj\Debug\CWApp.pdb
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWApp\CWApp\obj\Debug\CWApp.csprojAssemblyReference.cache

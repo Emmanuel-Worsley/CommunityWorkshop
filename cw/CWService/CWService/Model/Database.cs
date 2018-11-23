@@ -30,5 +30,6 @@ namespace CWService.Model
                 db.Execute(queries); // executes the sql inside the script
             }
         }
+
     }
 }

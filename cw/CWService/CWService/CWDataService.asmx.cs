@@ -32,7 +32,7 @@ namespace CWService
         }
 
         [WebMethod]
-        public void InsertTool(string brandID, string toolType, string comment, bool active)
+        public void InsertTool(string brandID, string toolType, string comment, int active)
         {
             using (var db = Model.Database.GetConnection().OpenAndReturn())
             using (var transaction = db.BeginTransaction())
@@ -51,7 +51,7 @@ namespace CWService
         }
 
         [WebMethod]
-        public void UpdateTool(string brandID, string description, bool active, string toolID)
+        public void UpdateTool(string brandID, string description, int active, string toolID)
         {
             using (var db = Model.Database.GetConnection().OpenAndReturn())
             using (var transaction = db.BeginTransaction())
@@ -112,8 +112,9 @@ namespace CWService
             {
                 try
                 {
-                    var query = $"INSERT INTO Brands (BrandName) VALUES ({BrandName})";
-                    var results = db.Execute(query, transaction);
+                    var query = "INSERT INTO Brands (BrandName) VALUES (@brandName)";
+                    var param = new { brandName = BrandName };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
                 catch
@@ -239,6 +240,35 @@ namespace CWService
 
         #region Employees
 
+
+        /*
+         * Used to encrypt the password of users 
+        */
+        private static string Encrypt(String Data)
+        {
+            const string ENCRYPTION_KEY = "5w1p3r n0 5w1p1n6"; // to be added to the start and end of the supplied password
+            string saltedPassword = ENCRYPTION_KEY + Data + ENCRYPTION_KEY; // adds key infront of the supplied password
+            byte[] bytes = System.Text.Encoding.ASCII.GetBytes(saltedPassword); // creates an array of bytes from the saltedPassword
+            bytes = new System.Security.Cryptography.SHA256Managed().ComputeHash(bytes); // hashes whats stored in bytes and puts it back into bytes
+            string hashed = System.Text.Encoding.ASCII.GetString(bytes); // takes the hashed bytes and turns it back into a string
+            return hashed; // returns the now hashed password
+        }
+
+        /*
+        * Checks to see if the username and password inputted are correct
+        */
+        [WebMethod]
+        public static bool ValidateUserCredentials(string user, string pass)
+        {
+            using (var db = Model.Database.GetConnection())
+            {
+                var query = "SELECT COUNT (*) FROM Employees WHERE StaffName = @StaffName AND StaffPin = @StaffPin";
+                var param = new { StaffName = user, StaffPin = Encrypt(pass) };
+                var results = (long)db.ExecuteScalar(query, param);
+                return results > 0;
+            }
+        }
+
         [WebMethod]
         public List<Employees> SelectAllEmployees()
         {
@@ -261,8 +291,9 @@ namespace CWService
             {
                 try
                 {
-                    var query = $"INSERT INTO Employees (StaffName, StaffPin) VALUES ({StaffName}, {StaffPin})";
-                    var results = db.Execute(query, transaction);
+                    var query = "INSERT INTO Employees (StaffName, StaffPin) VALUES (@staffName, @staffPin)";
+                    var param = new { staffName = StaffName, staffPin = Encrypt(StaffPin) };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
                 catch

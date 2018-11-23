@@ -13,3 +13,18 @@ E:\Tafe assignment progress\Michaels Assessment\CWService\CWService\obj\Debug\CW
 E:\Tafe assignment progress\Michaels Assessment\CWService\CWService\obj\Debug\CWService.csproj.CopyComplete
 E:\Tafe assignment progress\Michaels Assessment\CWService\CWService\obj\Debug\CWService.dll
 E:\Tafe assignment progress\Michaels Assessment\CWService\CWService\obj\Debug\CWService.pdb
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\CWService.dll.config
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\CWService.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\CWService.pdb
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\Dapper.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\System.Data.SQLite.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\Dapper.xml
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\System.Data.SQLite.xml
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\bin\System.Data.SQLite.dll.config
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\obj\Debug\CWService.csprojAssemblyReference.cache
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\obj\Debug\CWService.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\obj\Debug\CWService.csproj.CopyComplete
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\obj\Debug\CWService.dll
+C:\Users\Owner\Documents\GitHub\CommunityWorkshop\CW\CWService\CWService\obj\Debug\CWService.pdb
