@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SelectAllTools">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllToolsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllToolsResult" type="tns:ArrayOfTools" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTools">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tools" nillable="true" type="tns:Tools" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tools">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ToolID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="BrandID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToolType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectToolsByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectToolsByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectToolsByIDResult" type="tns:ArrayOfTools" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTool">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="brandID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toolType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertToolResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTool">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="brandID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="toolID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateToolResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveTool">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveToolResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllBrands">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllBrandsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllBrandsResult" type="tns:ArrayOfBrands" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBrands">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Brands" nillable="true" type="tns:Brands" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Brands">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BrandID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectBrandsByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectBrandsByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectBrandsByIDResult" type="tns:ArrayOfBrands" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBrands">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBrandsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateBrand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="brandName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="brandID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBrandResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveBrand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="brandID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveBrandResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllPatrons">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllPatronsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllPatronsResult" type="tns:ArrayOfPatrons" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPatrons">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Patrons" nillable="true" type="tns:Patrons" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Patrons">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PatronID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PatronName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectPatronsByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectPatronsByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectPatronsByIDResult" type="tns:ArrayOfPatrons" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPatrons">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PatronName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPatronsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdatePatron">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patronName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patronID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePatronResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemovePatron">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePatronResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllEmployees">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllEmployeesResult" type="tns:ArrayOfEmployees" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmployees">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Employees" nillable="true" type="tns:Employees" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Employees">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaffName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaffPin" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectEmployeesByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectEmployeesByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectEmployeesByIDResult" type="tns:ArrayOfEmployees" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StaffPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmployeeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StaffPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployeeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveEmployeeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllLoans">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllLoansResult" type="tns:ArrayOfLoans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLoans">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Loans" nillable="true" type="tns:Loans" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Loans">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LoanID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PatronID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ToolID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkStation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateLoaned" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateReturned" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectLoanByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectLoanByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectLoanByIDResult" type="tns:ArrayOfLoans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLoan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PatronID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToolID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkStation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLoanResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateLoan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoanID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLoanResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveLoan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveLoanResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SelectAllToolsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllTools" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllToolsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllToolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectToolsByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectToolsByID" />
+  </wsdl:message>
+  <wsdl:message name="SelectToolsByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectToolsByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertToolSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTool" />
+  </wsdl:message>
+  <wsdl:message name="InsertToolSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertToolResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateToolSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTool" />
+  </wsdl:message>
+  <wsdl:message name="UpdateToolSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateToolResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveToolSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveTool" />
+  </wsdl:message>
+  <wsdl:message name="RemoveToolSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveToolResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllBrands" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectBrandsByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectBrandsByID" />
+  </wsdl:message>
+  <wsdl:message name="SelectBrandsByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectBrandsByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBrands" />
+  </wsdl:message>
+  <wsdl:message name="InsertBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBrand" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBrandSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveBrandSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveBrand" />
+  </wsdl:message>
+  <wsdl:message name="RemoveBrandSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPatronsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllPatrons" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllPatronsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllPatronsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectPatronsByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectPatronsByID" />
+  </wsdl:message>
+  <wsdl:message name="SelectPatronsByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectPatronsByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertPatronsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertPatrons" />
+  </wsdl:message>
+  <wsdl:message name="InsertPatronsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertPatronsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePatronSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePatron" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePatronSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePatronResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePatronSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePatron" />
+  </wsdl:message>
+  <wsdl:message name="RemovePatronSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePatronResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllEmployees" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectEmployeesByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectEmployeesByID" />
+  </wsdl:message>
+  <wsdl:message name="SelectEmployeesByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectEmployeesByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEmployee" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveEmployee" />
+  </wsdl:message>
+  <wsdl:message name="RemoveEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllLoans" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectLoanByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectLoanByID" />
+  </wsdl:message>
+  <wsdl:message name="SelectLoanByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectLoanByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLoan" />
+  </wsdl:message>
+  <wsdl:message name="InsertLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLoan" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveLoan" />
+  </wsdl:message>
+  <wsdl:message name="RemoveLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveLoanResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CWDataServiceSoap">
+    <wsdl:operation name="SelectAllTools">
+      <wsdl:input message="tns:SelectAllToolsSoapIn" />
+      <wsdl:output message="tns:SelectAllToolsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectToolsByID">
+      <wsdl:input message="tns:SelectToolsByIDSoapIn" />
+      <wsdl:output message="tns:SelectToolsByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTool">
+      <wsdl:input message="tns:InsertToolSoapIn" />
+      <wsdl:output message="tns:InsertToolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTool">
+      <wsdl:input message="tns:UpdateToolSoapIn" />
+      <wsdl:output message="tns:UpdateToolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTool">
+      <wsdl:input message="tns:RemoveToolSoapIn" />
+      <wsdl:output message="tns:RemoveToolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllBrands">
+      <wsdl:input message="tns:SelectAllBrandsSoapIn" />
+      <wsdl:output message="tns:SelectAllBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectBrandsByID">
+      <wsdl:input message="tns:SelectBrandsByIDSoapIn" />
+      <wsdl:output message="tns:SelectBrandsByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <wsdl:input message="tns:InsertBrandsSoapIn" />
+      <wsdl:output message="tns:InsertBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrand">
+      <wsdl:input message="tns:UpdateBrandSoapIn" />
+      <wsdl:output message="tns:UpdateBrandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBrand">
+      <wsdl:input message="tns:RemoveBrandSoapIn" />
+      <wsdl:output message="tns:RemoveBrandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPatrons">
+      <wsdl:input message="tns:SelectAllPatronsSoapIn" />
+      <wsdl:output message="tns:SelectAllPatronsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectPatronsByID">
+      <wsdl:input message="tns:SelectPatronsByIDSoapIn" />
+      <wsdl:output message="tns:SelectPatronsByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatrons">
+      <wsdl:input message="tns:InsertPatronsSoapIn" />
+      <wsdl:output message="tns:InsertPatronsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatron">
+      <wsdl:input message="tns:UpdatePatronSoapIn" />
+      <wsdl:output message="tns:UpdatePatronSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePatron">
+      <wsdl:input message="tns:RemovePatronSoapIn" />
+      <wsdl:output message="tns:RemovePatronSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEmployees">
+      <wsdl:input message="tns:SelectAllEmployeesSoapIn" />
+      <wsdl:output message="tns:SelectAllEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectEmployeesByID">
+      <wsdl:input message="tns:SelectEmployeesByIDSoapIn" />
+      <wsdl:output message="tns:SelectEmployeesByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployee">
+      <wsdl:input message="tns:InsertEmployeeSoapIn" />
+      <wsdl:output message="tns:InsertEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input message="tns:UpdateEmployeeSoapIn" />
+      <wsdl:output message="tns:UpdateEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployee">
+      <wsdl:input message="tns:RemoveEmployeeSoapIn" />
+      <wsdl:output message="tns:RemoveEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllLoans">
+      <wsdl:input message="tns:SelectAllLoansSoapIn" />
+      <wsdl:output message="tns:SelectAllLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoanByID">
+      <wsdl:input message="tns:SelectLoanByIDSoapIn" />
+      <wsdl:output message="tns:SelectLoanByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoan">
+      <wsdl:input message="tns:InsertLoanSoapIn" />
+      <wsdl:output message="tns:InsertLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoan">
+      <wsdl:input message="tns:UpdateLoanSoapIn" />
+      <wsdl:output message="tns:UpdateLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLoan">
+      <wsdl:input message="tns:RemoveLoanSoapIn" />
+      <wsdl:output message="tns:RemoveLoanSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CWDataServiceSoap" type="tns:CWDataServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SelectAllTools">
+      <soap:operation soapAction="http://tempuri.org/SelectAllTools" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectToolsByID">
+      <soap:operation soapAction="http://tempuri.org/SelectToolsByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTool">
+      <soap:operation soapAction="http://tempuri.org/InsertTool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTool">
+      <soap:operation soapAction="http://tempuri.org/UpdateTool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTool">
+      <soap:operation soapAction="http://tempuri.org/RemoveTool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllBrands">
+      <soap:operation soapAction="http://tempuri.org/SelectAllBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectBrandsByID">
+      <soap:operation soapAction="http://tempuri.org/SelectBrandsByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <soap:operation soapAction="http://tempuri.org/InsertBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrand">
+      <soap:operation soapAction="http://tempuri.org/UpdateBrand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBrand">
+      <soap:operation soapAction="http://tempuri.org/RemoveBrand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPatrons">
+      <soap:operation soapAction="http://tempuri.org/SelectAllPatrons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPatronsByID">
+      <soap:operation soapAction="http://tempuri.org/SelectPatronsByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatrons">
+      <soap:operation soapAction="http://tempuri.org/InsertPatrons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatron">
+      <soap:operation soapAction="http://tempuri.org/UpdatePatron" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePatron">
+      <soap:operation soapAction="http://tempuri.org/RemovePatron" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEmployees">
+      <soap:operation soapAction="http://tempuri.org/SelectAllEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectEmployeesByID">
+      <soap:operation soapAction="http://tempuri.org/SelectEmployeesByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployee">
+      <soap:operation soapAction="http://tempuri.org/InsertEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap:operation soapAction="http://tempuri.org/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployee">
+      <soap:operation soapAction="http://tempuri.org/RemoveEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllLoans">
+      <soap:operation soapAction="http://tempuri.org/SelectAllLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoanByID">
+      <soap:operation soapAction="http://tempuri.org/SelectLoanByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoan">
+      <soap:operation soapAction="http://tempuri.org/InsertLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoan">
+      <soap:operation soapAction="http://tempuri.org/UpdateLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLoan">
+      <soap:operation soapAction="http://tempuri.org/RemoveLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CWDataServiceSoap12" type="tns:CWDataServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SelectAllTools">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllTools" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectToolsByID">
+      <soap12:operation soapAction="http://tempuri.org/SelectToolsByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTool">
+      <soap12:operation soapAction="http://tempuri.org/InsertTool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTool">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTool">
+      <soap12:operation soapAction="http://tempuri.org/RemoveTool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllBrands">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectBrandsByID">
+      <soap12:operation soapAction="http://tempuri.org/SelectBrandsByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBrands">
+      <soap12:operation soapAction="http://tempuri.org/InsertBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrand">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBrand">
+      <soap12:operation soapAction="http://tempuri.org/RemoveBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllPatrons">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllPatrons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPatronsByID">
+      <soap12:operation soapAction="http://tempuri.org/SelectPatronsByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPatrons">
+      <soap12:operation soapAction="http://tempuri.org/InsertPatrons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatron">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePatron" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePatron">
+      <soap12:operation soapAction="http://tempuri.org/RemovePatron" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllEmployees">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectEmployeesByID">
+      <soap12:operation soapAction="http://tempuri.org/SelectEmployeesByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmployee">
+      <soap12:operation soapAction="http://tempuri.org/InsertEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployee">
+      <soap12:operation soapAction="http://tempuri.org/RemoveEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllLoans">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoanByID">
+      <soap12:operation soapAction="http://tempuri.org/SelectLoanByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoan">
+      <soap12:operation soapAction="http://tempuri.org/InsertLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoan">
+      <soap12:operation soapAction="http://tempuri.org/UpdateLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLoan">
+      <soap12:operation soapAction="http://tempuri.org/RemoveLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CWDataService">
+    <wsdl:port name="CWDataServiceSoap" binding="tns:CWDataServiceSoap">
+      <soap:address location="http://localhost:59476/CWDataService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CWDataServiceSoap12" binding="tns:CWDataServiceSoap12">
+      <soap12:address location="http://localhost:59476/CWDataService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
