@@ -187,6 +187,7 @@
     </None>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
+    <Content Include="Website\Reports.aspx" />
     <Content Include="Website\Tools.aspx" />
     <Content Include="Website\Web.config">
       <SubType>Designer</SubType>
@@ -229,6 +230,13 @@
     </Compile>
     <Compile Include="Website\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website\Tools.aspx.cs">
       <DependentUpon>Tools.aspx</DependentUpon>
