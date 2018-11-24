@@ -13,6 +13,15 @@ namespace CWApp.Website {
     public partial class Tools {
         
         /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+        
+        /// <summary>
         /// lblToolID control.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,22 @@ namespace CWApp.Website {
         protected global::System.Web.UI.WebControls.Label lblToolID;
         
         /// <summary>
-        /// txtDescription control.
+        /// txtToolType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtToolType;
+        
+        /// <summary>
+        /// txtComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComment;
         
         /// <summary>
         /// ddlBrand control.

@@ -14,16 +14,18 @@ namespace CWApp
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
             //svc.InsertEmployee("emmanuel", "admin"); -- my one staff member
-            /*svc.InsertBrands("Generic");
-             svc.InsertBrands("Ryobi");
-             svc.InsertBrands("Ridgid");
-             svc.InsertBrands("Milwaukee");
-             svc.InsertBrands("Makita");
-             svc.InsertBrands("DeWalt");
-             svc.InsertBrands("Bosch");
-             svc.InsertBrands("Dremel");
+            /*
+            svc.InsertBrands("Generic");
+            svc.InsertBrands("Ryobi");
+            svc.InsertBrands("Ridgid");
+            svc.InsertBrands("Milwaukee");
+            svc.InsertBrands("Makita");
+            svc.InsertBrands("DeWalt");
+            svc.InsertBrands("Bosch");
+            svc.InsertBrands("Dremel");
              svc.InsertBrands("test");
             */
+            
         }
 
         protected void ctlLogin_Authenticate(object sender, AuthenticateEventArgs e)

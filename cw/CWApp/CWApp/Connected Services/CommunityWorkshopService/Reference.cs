@@ -15,6 +15,128 @@ namespace CWApp.CommunityWorkshopService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AllData", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class AllData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private long BrandIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BrandNameField;
+        
+        private long ToolIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ToolTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommentField;
+        
+        private bool ActiveField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long BrandID {
+            get {
+                return this.BrandIDField;
+            }
+            set {
+                if ((this.BrandIDField.Equals(value) != true)) {
+                    this.BrandIDField = value;
+                    this.RaisePropertyChanged("BrandID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string BrandName {
+            get {
+                return this.BrandNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BrandNameField, value) != true)) {
+                    this.BrandNameField = value;
+                    this.RaisePropertyChanged("BrandName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long ToolID {
+            get {
+                return this.ToolIDField;
+            }
+            set {
+                if ((this.ToolIDField.Equals(value) != true)) {
+                    this.ToolIDField = value;
+                    this.RaisePropertyChanged("ToolID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string ToolType {
+            get {
+                return this.ToolTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ToolTypeField, value) != true)) {
+                    this.ToolTypeField = value;
+                    this.RaisePropertyChanged("ToolType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Comment {
+            get {
+                return this.CommentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public bool Active {
+            get {
+                return this.ActiveField;
+            }
+            set {
+                if ((this.ActiveField.Equals(value) != true)) {
+                    this.ActiveField = value;
+                    this.RaisePropertyChanged("Active");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Tools", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class Tools : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -30,9 +152,9 @@ namespace CWApp.CommunityWorkshopService {
         private string ToolTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string commentField;
+        private string CommentField;
         
-        private bool activeField;
+        private bool ActiveField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -84,27 +206,27 @@ namespace CWApp.CommunityWorkshopService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string comment {
+        public string Comment {
             get {
-                return this.commentField;
+                return this.CommentField;
             }
             set {
-                if ((object.ReferenceEquals(this.commentField, value) != true)) {
-                    this.commentField = value;
-                    this.RaisePropertyChanged("comment");
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public bool active {
+        public bool Active {
             get {
-                return this.activeField;
+                return this.ActiveField;
             }
             set {
-                if ((this.activeField.Equals(value) != true)) {
-                    this.activeField = value;
-                    this.RaisePropertyChanged("active");
+                if ((this.ActiveField.Equals(value) != true)) {
+                    this.ActiveField = value;
+                    this.RaisePropertyChanged("Active");
                 }
             }
         }
@@ -470,6 +592,20 @@ namespace CWApp.CommunityWorkshopService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CommunityWorkshopService.CWDataServiceSoap")]
     public interface CWDataServiceSoap {
         
+        // CODEGEN: Generating message contract since element name SelectAllToolsAndBrandResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllToolsAndBrand", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse SelectAllToolsAndBrand(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllToolsAndBrand", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse> SelectAllToolsAndBrandAsync(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest request);
+        
+        // CODEGEN: Generating message contract since element name SelectAllToolsAndBrandNameResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllToolsAndBrandName", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse SelectAllToolsAndBrandName(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllToolsAndBrandName", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse> SelectAllToolsAndBrandNameAsync(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest request);
+        
         // CODEGEN: Generating message contract since element name SelectAllToolsResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllTools", ReplyAction="*")]
         CWApp.CommunityWorkshopService.SelectAllToolsResponse SelectAllTools(CWApp.CommunityWorkshopService.SelectAllToolsRequest request);
@@ -644,6 +780,128 @@ namespace CWApp.CommunityWorkshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RemoveLoan", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.RemoveLoanResponse> RemoveLoanAsync(CWApp.CommunityWorkshopService.RemoveLoanRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllToolsAndBrandRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllToolsAndBrand", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequestBody Body;
+        
+        public SelectAllToolsAndBrandRequest() {
+        }
+        
+        public SelectAllToolsAndBrandRequest(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SelectAllToolsAndBrandRequestBody {
+        
+        public SelectAllToolsAndBrandRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllToolsAndBrandResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllToolsAndBrandResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponseBody Body;
+        
+        public SelectAllToolsAndBrandResponse() {
+        }
+        
+        public SelectAllToolsAndBrandResponse(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllToolsAndBrandResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.AllData[] SelectAllToolsAndBrandResult;
+        
+        public SelectAllToolsAndBrandResponseBody() {
+        }
+        
+        public SelectAllToolsAndBrandResponseBody(CWApp.CommunityWorkshopService.AllData[] SelectAllToolsAndBrandResult) {
+            this.SelectAllToolsAndBrandResult = SelectAllToolsAndBrandResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllToolsAndBrandNameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllToolsAndBrandName", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequestBody Body;
+        
+        public SelectAllToolsAndBrandNameRequest() {
+        }
+        
+        public SelectAllToolsAndBrandNameRequest(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SelectAllToolsAndBrandNameRequestBody {
+        
+        public SelectAllToolsAndBrandNameRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllToolsAndBrandNameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllToolsAndBrandNameResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponseBody Body;
+        
+        public SelectAllToolsAndBrandNameResponse() {
+        }
+        
+        public SelectAllToolsAndBrandNameResponse(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllToolsAndBrandNameResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllToolsAndBrandNameResult;
+        
+        public SelectAllToolsAndBrandNameResponseBody() {
+        }
+        
+        public SelectAllToolsAndBrandNameResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllToolsAndBrandNameResult) {
+            this.SelectAllToolsAndBrandNameResult = SelectAllToolsAndBrandNameResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -875,20 +1133,24 @@ namespace CWApp.CommunityWorkshopService {
         public string brandID;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string description;
+        public string toolType;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string comment;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
         public int active;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string toolID;
         
         public UpdateToolRequestBody() {
         }
         
-        public UpdateToolRequestBody(string brandID, string description, int active, string toolID) {
+        public UpdateToolRequestBody(string brandID, string toolType, string comment, int active, string toolID) {
             this.brandID = brandID;
-            this.description = description;
+            this.toolType = toolType;
+            this.comment = comment;
             this.active = active;
             this.toolID = toolID;
         }
@@ -2298,6 +2560,52 @@ namespace CWApp.CommunityWorkshopService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllToolsAndBrand(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest request) {
+            return base.Channel.SelectAllToolsAndBrand(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.AllData[] SelectAllToolsAndBrand() {
+            CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest inValue = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequestBody();
+            CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllToolsAndBrand(inValue);
+            return retVal.Body.SelectAllToolsAndBrandResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllToolsAndBrandAsync(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest request) {
+            return base.Channel.SelectAllToolsAndBrandAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse> SelectAllToolsAndBrandAsync() {
+            CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest inValue = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandRequestBody();
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllToolsAndBrandAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllToolsAndBrandName(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest request) {
+            return base.Channel.SelectAllToolsAndBrandName(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllToolsAndBrandName() {
+            CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest inValue = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequestBody();
+            CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllToolsAndBrandName(inValue);
+            return retVal.Body.SelectAllToolsAndBrandNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllToolsAndBrandNameAsync(CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest request) {
+            return base.Channel.SelectAllToolsAndBrandNameAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse> SelectAllToolsAndBrandNameAsync() {
+            CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest inValue = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameRequestBody();
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllToolsAndBrandNameAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         CWApp.CommunityWorkshopService.SelectAllToolsResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllTools(CWApp.CommunityWorkshopService.SelectAllToolsRequest request) {
             return base.Channel.SelectAllTools(request);
         }
@@ -2380,11 +2688,12 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.UpdateTool(request);
         }
         
-        public void UpdateTool(string brandID, string description, int active, string toolID) {
+        public void UpdateTool(string brandID, string toolType, string comment, int active, string toolID) {
             CWApp.CommunityWorkshopService.UpdateToolRequest inValue = new CWApp.CommunityWorkshopService.UpdateToolRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.UpdateToolRequestBody();
             inValue.Body.brandID = brandID;
-            inValue.Body.description = description;
+            inValue.Body.toolType = toolType;
+            inValue.Body.comment = comment;
             inValue.Body.active = active;
             inValue.Body.toolID = toolID;
             CWApp.CommunityWorkshopService.UpdateToolResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).UpdateTool(inValue);
@@ -2395,11 +2704,12 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.UpdateToolAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateToolResponse> UpdateToolAsync(string brandID, string description, int active, string toolID) {
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateToolResponse> UpdateToolAsync(string brandID, string toolType, string comment, int active, string toolID) {
             CWApp.CommunityWorkshopService.UpdateToolRequest inValue = new CWApp.CommunityWorkshopService.UpdateToolRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.UpdateToolRequestBody();
             inValue.Body.brandID = brandID;
-            inValue.Body.description = description;
+            inValue.Body.toolType = toolType;
+            inValue.Body.comment = comment;
             inValue.Body.active = active;
             inValue.Body.toolID = toolID;
             return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).UpdateToolAsync(inValue);

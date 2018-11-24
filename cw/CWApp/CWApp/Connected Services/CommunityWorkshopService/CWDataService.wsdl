@@ -2,13 +2,38 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="SelectAllTools">
+      <s:element name="SelectAllToolsAndBrand">
         <s:complexType />
       </s:element>
-      <s:element name="SelectAllToolsResponse">
+      <s:element name="SelectAllToolsAndBrandResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SelectAllToolsResult" type="tns:ArrayOfTools" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllToolsAndBrandResult" type="tns:ArrayOfAllData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAllData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AllData" nillable="true" type="tns:AllData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AllData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BrandID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ToolID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToolType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectAllToolsAndBrandName">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllToolsAndBrandNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllToolsAndBrandNameResult" type="tns:ArrayOfTools" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -22,10 +47,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="ToolID" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="BrandID" type="s:long" />
           <s:element minOccurs="0" maxOccurs="1" name="ToolType" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
         </s:sequence>
       </s:complexType>
+      <s:element name="SelectAllTools">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllToolsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllToolsResult" type="tns:ArrayOfTools" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SelectToolsByID">
         <s:complexType>
           <s:sequence>
@@ -57,7 +92,8 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="brandID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toolType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="active" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="toolID" type="s:string" />
           </s:sequence>
@@ -355,6 +391,18 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="SelectAllToolsAndBrandSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllToolsAndBrand" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllToolsAndBrandSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllToolsAndBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllToolsAndBrandNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllToolsAndBrandName" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllToolsAndBrandNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllToolsAndBrandNameResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectAllToolsSoapIn">
     <wsdl:part name="parameters" element="tns:SelectAllTools" />
   </wsdl:message>
@@ -506,6 +554,14 @@
     <wsdl:part name="parameters" element="tns:RemoveLoanResponse" />
   </wsdl:message>
   <wsdl:portType name="CWDataServiceSoap">
+    <wsdl:operation name="SelectAllToolsAndBrand">
+      <wsdl:input message="tns:SelectAllToolsAndBrandSoapIn" />
+      <wsdl:output message="tns:SelectAllToolsAndBrandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllToolsAndBrandName">
+      <wsdl:input message="tns:SelectAllToolsAndBrandNameSoapIn" />
+      <wsdl:output message="tns:SelectAllToolsAndBrandNameSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SelectAllTools">
       <wsdl:input message="tns:SelectAllToolsSoapIn" />
       <wsdl:output message="tns:SelectAllToolsSoapOut" />
@@ -609,6 +665,24 @@
   </wsdl:portType>
   <wsdl:binding name="CWDataServiceSoap" type="tns:CWDataServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SelectAllToolsAndBrand">
+      <soap:operation soapAction="http://tempuri.org/SelectAllToolsAndBrand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllToolsAndBrandName">
+      <soap:operation soapAction="http://tempuri.org/SelectAllToolsAndBrandName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectAllTools">
       <soap:operation soapAction="http://tempuri.org/SelectAllTools" style="document" />
       <wsdl:input>
@@ -837,6 +911,24 @@
   </wsdl:binding>
   <wsdl:binding name="CWDataServiceSoap12" type="tns:CWDataServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SelectAllToolsAndBrand">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllToolsAndBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllToolsAndBrandName">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllToolsAndBrandName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectAllTools">
       <soap12:operation soapAction="http://tempuri.org/SelectAllTools" style="document" />
       <wsdl:input>

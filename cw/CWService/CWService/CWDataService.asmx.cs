@@ -19,6 +19,21 @@ namespace CWService
     {
         #region Tools
         [WebMethod]
+        public List<AllData> SelectAllToolsAndBrand()
+        {
+            var query = "SELECT Brands.BrandName, Tools.* FROM Brands INNER JOIN Tools on Brands.BrandID = Tools.BrandID;";
+            return Model.Database.GetConnection().Query<AllData>(query).ToList();
+        }
+
+        [WebMethod]
+        public List<Tools> SelectAllToolsAndBrandName()
+        {
+
+            var query = "SELECT Brands.BrandName, Tools.* FROM Brands INNER JOIN Tools on Brands.BrandID = Tools.BrandID;";
+            return Model.Database.GetConnection().Query<Tools>(query).ToList();
+        }
+
+        [WebMethod]
         public List<Tools> SelectAllTools ()
         {
             var query = "SELECT * FROM Tools";
@@ -27,8 +42,9 @@ namespace CWService
         [WebMethod]
         public List<Tools> SelectToolsByID(string ID)
         {
-            var query = $"SELECT * FROM Tools WHERE ToolID = {ID}";
-            return Model.Database.GetConnection().Query<Tools>(query).ToList();
+            var query = "SELECT * FROM Tools WHERE ToolID = @ToolID";
+            var param = new { ToolID = ID };
+            return Model.Database.GetConnection().Query<Tools>(query, param).ToList();
         }
 
         [WebMethod]
@@ -39,8 +55,9 @@ namespace CWService
             {
                 try
                 {
-                    var query = $"INSERT INTO Tools (BrandID, ToolType, Comment, Active) VALUES ({brandID}, {toolType}, {comment}, {active})";
-                    var results = db.Execute(query, transaction);
+                    var query = "INSERT INTO Tools (BrandID, ToolType, Comment, Active) VALUES (@BrandID, @ToolType, @Comment, @Active)";
+                    var param = new { BrandID = brandID, ToolType = toolType, Comment = comment, Active = active };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
                 catch
@@ -51,19 +68,21 @@ namespace CWService
         }
 
         [WebMethod]
-        public void UpdateTool(string brandID, string description, int active, string toolID)
+        public void UpdateTool(string brandID, string toolType, string comment, int active, string toolID)
         {
             using (var db = Model.Database.GetConnection().OpenAndReturn())
             using (var transaction = db.BeginTransaction())
             {
                 try
                 {
-                    var query = $"UPDATE Tools SET BrandID = {brandID}, Description = {description}, Active = {active} WHERE ToolID = {toolID}";
-                    var results = db.Execute(query, transaction);
+                    var query = "UPDATE Tools SET BrandID = @BrandID, ToolType = @ToolType, Comment = @Comment, Active = @Active WHERE ToolID = @ToolID";
+                    var param = new { BrandID = brandID, ToolType = toolType, Comment = comment, Active = active, ToolID = toolID };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch(Exception ex)
                 {
+                    Console.WriteLine(ex);
                     transaction.Rollback();
                 }
             }

@@ -162,6 +162,15 @@
     </Content>
     <Content Include="Default.aspx" />
     <Content Include="Website\Main.aspx" />
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.AllData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CommunityWorkshopService\CWDataService.disco" />
     <None Include="Connected Services\CommunityWorkshopService\configuration91.svcinfo" />
     <None Include="Connected Services\CommunityWorkshopService\configuration.svcinfo" />
