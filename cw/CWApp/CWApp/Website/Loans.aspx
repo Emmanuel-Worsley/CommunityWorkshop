@@ -9,6 +9,11 @@
             <asp:Label ID="lblStatus" runat="server" />
         </div>
         <br />
+        Patrons: <asp:DropDownList ID="ddlPatrons" runat="server" />
+        <br />
+        Tools: <asp:DropDownList ID="ddlTools" runat="server" />
+        <br />
+        <br />
         <asp:GridView ID="gvLoans" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:CommandField ShowSelectButton="true" />

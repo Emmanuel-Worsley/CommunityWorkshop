@@ -22,6 +22,24 @@ namespace CWApp.Website {
         protected global::System.Web.UI.WebControls.Label lblStatus;
         
         /// <summary>
+        /// ddlPatrons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPatrons;
+        
+        /// <summary>
+        /// ddlTools control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTools;
+        
+        /// <summary>
         /// gvLoans control.
         /// </summary>
         /// <remarks>

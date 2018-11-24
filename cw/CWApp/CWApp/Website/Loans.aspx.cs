@@ -12,6 +12,7 @@ namespace CWApp.Website
         protected void Page_Load(object sender, EventArgs e)
         {
             loadLoanData();
+            loadPatronData();
         }
 
         public void loadLoanData()
@@ -25,6 +26,21 @@ namespace CWApp.Website
             }
             gvLoans.DataSource = loans;
             gvLoans.DataBind();
+        }
+
+        public void loadPatronData()
+        {
+            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
+            var patrons = new List<object>();
+            foreach (var row in svc.SelectAllPatrons())
+            {
+                var obj = new { row.PatronName, row.PatronID };
+                patrons.Add(obj);
+            }
+            ddlPatrons.DataValueField = "PatronID";
+            ddlPatrons.DataTextField = "PatronName";
+            ddlPatrons.DataSource = patrons;
+            ddlPatrons.DataBind();
         }
     }
 }
