@@ -178,6 +178,12 @@
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.confirmAccessResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllActiveToolsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CommunityWorkshopService\CWDataService.disco" />
     <None Include="Connected Services\CommunityWorkshopService\configuration91.svcinfo" />
     <None Include="Connected Services\CommunityWorkshopService\configuration.svcinfo" />

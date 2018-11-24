@@ -949,6 +949,20 @@ namespace CWApp.CommunityWorkshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RemoveLoan", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.RemoveLoanResponse> RemoveLoanAsync(CWApp.CommunityWorkshopService.RemoveLoanRequest request);
+        
+        // CODEGEN: Generating message contract since element name active from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveTools", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectAllActiveToolsResponse SelectAllActiveTools(CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveTools", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsResponse> SelectAllActiveToolsAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest request);
+        
+        // CODEGEN: Generating message contract since element name SelectAllCheckedoutToolsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllCheckedoutTools", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse SelectAllCheckedoutTools(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllCheckedoutTools", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse> SelectAllCheckedoutToolsAsync(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2841,6 +2855,135 @@ namespace CWApp.CommunityWorkshopService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveToolsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveTools", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveToolsRequestBody Body;
+        
+        public SelectAllActiveToolsRequest() {
+        }
+        
+        public SelectAllActiveToolsRequest(CWApp.CommunityWorkshopService.SelectAllActiveToolsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllActiveToolsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string active;
+        
+        public SelectAllActiveToolsRequestBody() {
+        }
+        
+        public SelectAllActiveToolsRequestBody(string active) {
+            this.active = active;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveToolsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveToolsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveToolsResponseBody Body;
+        
+        public SelectAllActiveToolsResponse() {
+        }
+        
+        public SelectAllActiveToolsResponse(CWApp.CommunityWorkshopService.SelectAllActiveToolsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllActiveToolsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsResult;
+        
+        public SelectAllActiveToolsResponseBody() {
+        }
+        
+        public SelectAllActiveToolsResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsResult) {
+            this.SelectAllActiveToolsResult = SelectAllActiveToolsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllCheckedoutToolsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllCheckedoutTools", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequestBody Body;
+        
+        public SelectAllCheckedoutToolsRequest() {
+        }
+        
+        public SelectAllCheckedoutToolsRequest(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SelectAllCheckedoutToolsRequestBody {
+        
+        public SelectAllCheckedoutToolsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllCheckedoutToolsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllCheckedoutToolsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponseBody Body;
+        
+        public SelectAllCheckedoutToolsResponse() {
+        }
+        
+        public SelectAllCheckedoutToolsResponse(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllCheckedoutToolsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllCheckedoutToolsResult;
+        
+        public SelectAllCheckedoutToolsResponseBody() {
+        }
+        
+        public SelectAllCheckedoutToolsResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllCheckedoutToolsResult) {
+            this.SelectAllCheckedoutToolsResult = SelectAllCheckedoutToolsResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CWDataServiceSoapChannel : CWApp.CommunityWorkshopService.CWDataServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -3598,6 +3741,54 @@ namespace CWApp.CommunityWorkshopService {
             inValue.Body = new CWApp.CommunityWorkshopService.RemoveLoanRequestBody();
             inValue.Body.ID = ID;
             return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).RemoveLoanAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectAllActiveToolsResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveTools(CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest request) {
+            return base.Channel.SelectAllActiveTools(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveTools(string active) {
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsRequestBody();
+            inValue.Body.active = active;
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveTools(inValue);
+            return retVal.Body.SelectAllActiveToolsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveToolsAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest request) {
+            return base.Channel.SelectAllActiveToolsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsResponse> SelectAllActiveToolsAsync(string active) {
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsRequestBody();
+            inValue.Body.active = active;
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveToolsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllCheckedoutTools(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest request) {
+            return base.Channel.SelectAllCheckedoutTools(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllCheckedoutTools() {
+            CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequestBody();
+            CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllCheckedoutTools(inValue);
+            return retVal.Body.SelectAllCheckedoutToolsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllCheckedoutToolsAsync(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest request) {
+            return base.Channel.SelectAllCheckedoutToolsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse> SelectAllCheckedoutToolsAsync() {
+            CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequestBody();
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllCheckedoutToolsAsync(inValue);
         }
     }
 }

@@ -1,14 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CW.Master" AutoEventWireup="true" CodeBehind="Reports.aspx.cs" Inherits="CWApp.Website.Reports" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <div class="display-5" style="padding-left: 2em;">
-            <h2>Reports On Tools:</h2>
-            <asp:DropDownList ID="ddlTools" runat="server" />
-            <asp:Button ID="btnCheckedOutTools" runat="server" Text="Checked Out Tools" /> <br />
-            <asp:Button ID="btnActiveTools" runat="server" Text="Load Tools" />
-            <asp:CheckBox ID="chkActive" runat="server" /> Active
+    <div class="container-fluid">
+        <div class="row" style="padding-left: 2em;">
+            <div class="col-4; display-5" style="border-style: outset; background-color: aqua;">
+                <h2>Reports On Tools:</h2>
+                <asp:DropDownList ID="ddlTools" runat="server" />
+                <asp:Button ID="btnCheckedOutTools" runat="server" Text="Checked Out Tools" OnClick="btnCheckedOutTools_Click" />
+                <br />
+                <asp:Button ID="btnActiveTools" runat="server" Text="Load Tools" OnClick="btnActiveTools_Click" />
+                <asp:CheckBox ID="chkActiveCheck" runat="server" />
+                Active
+            </div>
+            <div class="col-4; display-5" style="border-style: outset; background-color: yellow; padding-left: 0.5em;">
+                <h4>Test</h4>
+            </div>
+            <div class="col-4; display-5" style="border-style: outset; background-color: red; padding-left: 0.5em;">
+                <h4>Test</h4>
+            </div>
         </div>
+    </div>
+    <div class="table; display-5">
+        <asp:GridView ID="gvShowReports" runat="server" AutoGenerateColumns="true" OnRowDataBound="gvShowReports_RowDataBound">
+            <HeaderStyle CssClass="active; align-content-center;" />
+        </asp:GridView>
+        <asp:g
     </div>
 </asp:Content>

@@ -26,7 +26,7 @@ namespace CWService
         }
 
         [WebMethod]
-        public List<Tools> SelectAllTools ()
+        public List<Tools> SelectAllTools()
         {
             var query = "SELECT * FROM Tools";
             return Model.Database.GetConnection().Query<Tools>(query).ToList();
@@ -72,7 +72,7 @@ namespace CWService
                     var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex);
                     transaction.Rollback();
@@ -444,6 +444,40 @@ namespace CWService
                 }
             }
         }
+        #endregion
+
+        #region Report Queries
+        [WebMethod]
+        public List<Tools> SelectAllActiveTools(string active)
+        {
+            var query = "SELECT Tools.ToolID, Tools.ToolType, Tools.Comment, Tools.Active FROM Tools WHERE Tools.Active = @active";
+            var param = new { Active = active };
+            return Model.Database.GetConnection().Query <Tools>(query, param).ToList();
+        }
+
+        [WebMethod]
+        public List<Tools> SelectAllCheckedoutTools()
+        {
+            var query = "SELECT Tools.ToolType, Tools.ToolID, Tools.Comment, Tools.Active, Loans.ToolID FROM Loans INNER JOIN Tools ON Tools.ToolID = Loans.ToolID WHERE Loans.DateReturn IS NULL;";
+            return Model.Database.GetConnection().Query<Tools>(query).ToList();
+        }
+
+       /* [WebMethod]
+        public List<Tools> SelectAllCheckedoutTools()
+        {
+            var query = "SELECT Tools.Description, Tools.ToolID, Loans.ToolID FROM Loans INNER JOIN Tools ON Tools.ToolID = Loans.ToolID WHERE Loans.DateReturn IS NULL;";
+            return Model.Database.GetConnection().Query<Tools>(query).ToList();
+        }
+
+        [WebMethod]
+        public List<Tools> SelectAllCheckedoutTools()
+        {
+            var query = "SELECT Tools.Description, Tools.ToolID, Loans.ToolID FROM Loans INNER JOIN Tools ON Tools.ToolID = Loans.ToolID WHERE Loans.DateReturn IS NULL;";
+            return Model.Database.GetConnection().Query<Tools>(query).ToList();
+        }
+        */
+
+
         #endregion
     }
 }

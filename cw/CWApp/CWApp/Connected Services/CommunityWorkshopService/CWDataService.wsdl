@@ -428,6 +428,30 @@
       <s:element name="RemoveLoanResponse">
         <s:complexType />
       </s:element>
+      <s:element name="SelectAllActiveTools">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="active" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllActiveToolsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllActiveToolsResult" type="tns:ArrayOfTools" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectAllCheckedoutTools">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllCheckedoutToolsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllCheckedoutToolsResult" type="tns:ArrayOfTools" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="SelectAllToolsAndBrandSoapIn">
@@ -604,6 +628,18 @@
   <wsdl:message name="RemoveLoanSoapOut">
     <wsdl:part name="parameters" element="tns:RemoveLoanResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectAllActiveToolsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllActiveTools" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllActiveToolsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllActiveToolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllCheckedoutToolsSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllCheckedoutTools" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllCheckedoutToolsSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllCheckedoutToolsResponse" />
+  </wsdl:message>
   <wsdl:portType name="CWDataServiceSoap">
     <wsdl:operation name="SelectAllToolsAndBrand">
       <wsdl:input message="tns:SelectAllToolsAndBrandSoapIn" />
@@ -720,6 +756,14 @@
     <wsdl:operation name="RemoveLoan">
       <wsdl:input message="tns:RemoveLoanSoapIn" />
       <wsdl:output message="tns:RemoveLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllActiveTools">
+      <wsdl:input message="tns:SelectAllActiveToolsSoapIn" />
+      <wsdl:output message="tns:SelectAllActiveToolsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCheckedoutTools">
+      <wsdl:input message="tns:SelectAllCheckedoutToolsSoapIn" />
+      <wsdl:output message="tns:SelectAllCheckedoutToolsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CWDataServiceSoap" type="tns:CWDataServiceSoap">
@@ -985,6 +1029,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectAllActiveTools">
+      <soap:operation soapAction="http://tempuri.org/SelectAllActiveTools" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCheckedoutTools">
+      <soap:operation soapAction="http://tempuri.org/SelectAllCheckedoutTools" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CWDataServiceSoap12" type="tns:CWDataServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1242,6 +1304,24 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveLoan">
       <soap12:operation soapAction="http://tempuri.org/RemoveLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllActiveTools">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllActiveTools" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCheckedoutTools">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllCheckedoutTools" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
