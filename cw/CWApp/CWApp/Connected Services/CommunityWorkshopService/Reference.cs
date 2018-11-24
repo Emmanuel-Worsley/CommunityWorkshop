@@ -859,6 +859,13 @@ namespace CWApp.CommunityWorkshopService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RemovePatron", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.RemovePatronResponse> RemovePatronAsync(CWApp.CommunityWorkshopService.RemovePatronRequest request);
         
+        // CODEGEN: Generating message contract since element name user from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/confirmAccess", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.confirmAccessResponse confirmAccess(CWApp.CommunityWorkshopService.confirmAccessRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/confirmAccess", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.confirmAccessResponse> confirmAccessAsync(CWApp.CommunityWorkshopService.confirmAccessRequest request);
+        
         // CODEGEN: Generating message contract since element name SelectAllEmployeesResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllEmployees", ReplyAction="*")]
         CWApp.CommunityWorkshopService.SelectAllEmployeesResponse SelectAllEmployees(CWApp.CommunityWorkshopService.SelectAllEmployeesRequest request);
@@ -872,6 +879,13 @@ namespace CWApp.CommunityWorkshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectEmployeesByID", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectEmployeesByIDResponse> SelectEmployeesByIDAsync(CWApp.CommunityWorkshopService.SelectEmployeesByIDRequest request);
+        
+        // CODEGEN: Generating message contract since element name Name from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectEmployeesByName", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse SelectEmployeesByName(CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectEmployeesByName", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse> SelectEmployeesByNameAsync(CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest request);
         
         // CODEGEN: Generating message contract since element name StaffName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertEmployee", ReplyAction="*")]
@@ -1982,6 +1996,78 @@ namespace CWApp.CommunityWorkshopService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class confirmAccessRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="confirmAccess", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.confirmAccessRequestBody Body;
+        
+        public confirmAccessRequest() {
+        }
+        
+        public confirmAccessRequest(CWApp.CommunityWorkshopService.confirmAccessRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class confirmAccessRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string user;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        public confirmAccessRequestBody() {
+        }
+        
+        public confirmAccessRequestBody(string user, string pass) {
+            this.user = user;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class confirmAccessResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="confirmAccessResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.confirmAccessResponseBody Body;
+        
+        public confirmAccessResponse() {
+        }
+        
+        public confirmAccessResponse(CWApp.CommunityWorkshopService.confirmAccessResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class confirmAccessResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool confirmAccessResult;
+        
+        public confirmAccessResponseBody() {
+        }
+        
+        public confirmAccessResponseBody(bool confirmAccessResult) {
+            this.confirmAccessResult = confirmAccessResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SelectAllEmployeesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllEmployees", Namespace="http://tempuri.org/", Order=0)]
@@ -2104,6 +2190,74 @@ namespace CWApp.CommunityWorkshopService {
         
         public SelectEmployeesByIDResponseBody(CWApp.CommunityWorkshopService.Employees[] SelectEmployeesByIDResult) {
             this.SelectEmployeesByIDResult = SelectEmployeesByIDResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectEmployeesByNameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectEmployeesByName", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectEmployeesByNameRequestBody Body;
+        
+        public SelectEmployeesByNameRequest() {
+        }
+        
+        public SelectEmployeesByNameRequest(CWApp.CommunityWorkshopService.SelectEmployeesByNameRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectEmployeesByNameRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Name;
+        
+        public SelectEmployeesByNameRequestBody() {
+        }
+        
+        public SelectEmployeesByNameRequestBody(string Name) {
+            this.Name = Name;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectEmployeesByNameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectEmployeesByNameResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectEmployeesByNameResponseBody Body;
+        
+        public SelectEmployeesByNameResponse() {
+        }
+        
+        public SelectEmployeesByNameResponse(CWApp.CommunityWorkshopService.SelectEmployeesByNameResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectEmployeesByNameResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.Employees[] SelectEmployeesByNameResult;
+        
+        public SelectEmployeesByNameResponseBody() {
+        }
+        
+        public SelectEmployeesByNameResponseBody(CWApp.CommunityWorkshopService.Employees[] SelectEmployeesByNameResult) {
+            this.SelectEmployeesByNameResult = SelectEmployeesByNameResult;
         }
     }
     
@@ -3120,6 +3274,33 @@ namespace CWApp.CommunityWorkshopService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.confirmAccessResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.confirmAccess(CWApp.CommunityWorkshopService.confirmAccessRequest request) {
+            return base.Channel.confirmAccess(request);
+        }
+        
+        public bool confirmAccess(string user, string pass) {
+            CWApp.CommunityWorkshopService.confirmAccessRequest inValue = new CWApp.CommunityWorkshopService.confirmAccessRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.confirmAccessRequestBody();
+            inValue.Body.user = user;
+            inValue.Body.pass = pass;
+            CWApp.CommunityWorkshopService.confirmAccessResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).confirmAccess(inValue);
+            return retVal.Body.confirmAccessResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.confirmAccessResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.confirmAccessAsync(CWApp.CommunityWorkshopService.confirmAccessRequest request) {
+            return base.Channel.confirmAccessAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.confirmAccessResponse> confirmAccessAsync(string user, string pass) {
+            CWApp.CommunityWorkshopService.confirmAccessRequest inValue = new CWApp.CommunityWorkshopService.confirmAccessRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.confirmAccessRequestBody();
+            inValue.Body.user = user;
+            inValue.Body.pass = pass;
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).confirmAccessAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         CWApp.CommunityWorkshopService.SelectAllEmployeesResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllEmployees(CWApp.CommunityWorkshopService.SelectAllEmployeesRequest request) {
             return base.Channel.SelectAllEmployees(request);
         }
@@ -3165,6 +3346,31 @@ namespace CWApp.CommunityWorkshopService {
             inValue.Body = new CWApp.CommunityWorkshopService.SelectEmployeesByIDRequestBody();
             inValue.Body.ID = ID;
             return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectEmployeesByIDAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectEmployeesByName(CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest request) {
+            return base.Channel.SelectEmployeesByName(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.Employees[] SelectEmployeesByName(string Name) {
+            CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest inValue = new CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectEmployeesByNameRequestBody();
+            inValue.Body.Name = Name;
+            CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectEmployeesByName(inValue);
+            return retVal.Body.SelectEmployeesByNameResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectEmployeesByNameAsync(CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest request) {
+            return base.Channel.SelectEmployeesByNameAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse> SelectEmployeesByNameAsync(string Name) {
+            CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest inValue = new CWApp.CommunityWorkshopService.SelectEmployeesByNameRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectEmployeesByNameRequestBody();
+            inValue.Body.Name = Name;
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectEmployeesByNameAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

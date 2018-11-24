@@ -9,13 +9,20 @@
             <asp:Label ID="lblStatus" runat="server" />
         </div>
         <br />
+        Loan ID: <asp:Label ID="lblLoanID" runat="server" />
+        <br/>
         Patrons: <asp:DropDownList ID="ddlPatrons" runat="server" />
+        <br />
+        Workstation: <asp:TextBox ID="txtWorkstation" runat="server" />
         <br />
         Tools: <asp:DropDownList ID="ddlTools" runat="server" />
         <br />
+        <asp:Button ID="btnNewLoan" runat="server" Text="New Loan" OnClick="btnNewLoan_Click" />
+        <asp:Button ID="btnDeleteLoan" runat="server" Text="Delete Loan" OnClick="btnDeleteLoan_Click" />
         <br />
-        <asp:GridView ID="gvLoans" runat="server" AutoGenerateColumns="false">
-            <Columns>
+        <br />
+        <asp:GridView ID="gvLoans" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="gvLoans_SelectedIndexChanged">
+           <Columns>
                 <asp:CommandField ShowSelectButton="true" />
                 <asp:BoundField HeaderText="Loan ID" DataField="LoanID" />
                 <asp:BoundField HeaderText="Rented By" DataField="PatronName" />

@@ -22,6 +22,15 @@ namespace CWApp.Website {
         protected global::System.Web.UI.WebControls.Label lblStatus;
         
         /// <summary>
+        /// lblLoanID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoanID;
+        
+        /// <summary>
         /// ddlPatrons control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace CWApp.Website {
         protected global::System.Web.UI.WebControls.DropDownList ddlPatrons;
         
         /// <summary>
+        /// txtWorkstation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtWorkstation;
+        
+        /// <summary>
         /// ddlTools control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,24 @@ namespace CWApp.Website {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTools;
+        
+        /// <summary>
+        /// btnNewLoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewLoan;
+        
+        /// <summary>
+        /// btnDeleteLoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteLoan;
         
         /// <summary>
         /// gvLoans control.

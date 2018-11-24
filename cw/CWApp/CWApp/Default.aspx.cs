@@ -31,8 +31,7 @@ namespace CWApp
         protected void ctlLogin_Authenticate(object sender, AuthenticateEventArgs e)
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
-            //bool validLogin = svc.ValidateUserCredentials(ctlLogin.UserName, ctlLogin.Password);
-            bool validLogin = true;
+            bool validLogin = svc.confirmAccess(ctlLogin.UserName, ctlLogin.Password);
             if (validLogin)
             {
                 FormsAuthentication.RedirectFromLoginPage(ctlLogin.UserName, ctlLogin.RememberMeSet);

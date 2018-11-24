@@ -247,6 +247,21 @@
       <s:element name="RemovePatronResponse">
         <s:complexType />
       </s:element>
+      <s:element name="confirmAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="confirmAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="confirmAccessResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SelectAllEmployees">
         <s:complexType />
       </s:element>
@@ -280,6 +295,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SelectEmployeesByIDResult" type="tns:ArrayOfEmployees" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectEmployeesByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectEmployeesByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectEmployeesByNameResult" type="tns:ArrayOfEmployees" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -497,6 +526,12 @@
   <wsdl:message name="RemovePatronSoapOut">
     <wsdl:part name="parameters" element="tns:RemovePatronResponse" />
   </wsdl:message>
+  <wsdl:message name="confirmAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:confirmAccess" />
+  </wsdl:message>
+  <wsdl:message name="confirmAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:confirmAccessResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectAllEmployeesSoapIn">
     <wsdl:part name="parameters" element="tns:SelectAllEmployees" />
   </wsdl:message>
@@ -508,6 +543,12 @@
   </wsdl:message>
   <wsdl:message name="SelectEmployeesByIDSoapOut">
     <wsdl:part name="parameters" element="tns:SelectEmployeesByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectEmployeesByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectEmployeesByName" />
+  </wsdl:message>
+  <wsdl:message name="SelectEmployeesByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectEmployeesByNameResponse" />
   </wsdl:message>
   <wsdl:message name="InsertEmployeeSoapIn">
     <wsdl:part name="parameters" element="tns:InsertEmployee" />
@@ -628,6 +669,10 @@
       <wsdl:input message="tns:RemovePatronSoapIn" />
       <wsdl:output message="tns:RemovePatronSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="confirmAccess">
+      <wsdl:input message="tns:confirmAccessSoapIn" />
+      <wsdl:output message="tns:confirmAccessSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SelectAllEmployees">
       <wsdl:input message="tns:SelectAllEmployeesSoapIn" />
       <wsdl:output message="tns:SelectAllEmployeesSoapOut" />
@@ -635,6 +680,10 @@
     <wsdl:operation name="SelectEmployeesByID">
       <wsdl:input message="tns:SelectEmployeesByIDSoapIn" />
       <wsdl:output message="tns:SelectEmployeesByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectEmployeesByName">
+      <wsdl:input message="tns:SelectEmployeesByNameSoapIn" />
+      <wsdl:output message="tns:SelectEmployeesByNameSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InsertEmployee">
       <wsdl:input message="tns:InsertEmployeeSoapIn" />
@@ -819,6 +868,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="confirmAccess">
+      <soap:operation soapAction="http://tempuri.org/confirmAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectAllEmployees">
       <soap:operation soapAction="http://tempuri.org/SelectAllEmployees" style="document" />
       <wsdl:input>
@@ -830,6 +888,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectEmployeesByID">
       <soap:operation soapAction="http://tempuri.org/SelectEmployeesByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectEmployeesByName">
+      <soap:operation soapAction="http://tempuri.org/SelectEmployeesByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1065,6 +1132,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="confirmAccess">
+      <soap12:operation soapAction="http://tempuri.org/confirmAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectAllEmployees">
       <soap12:operation soapAction="http://tempuri.org/SelectAllEmployees" style="document" />
       <wsdl:input>
@@ -1076,6 +1152,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectEmployeesByID">
       <soap12:operation soapAction="http://tempuri.org/SelectEmployeesByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectEmployeesByName">
+      <soap12:operation soapAction="http://tempuri.org/SelectEmployeesByName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

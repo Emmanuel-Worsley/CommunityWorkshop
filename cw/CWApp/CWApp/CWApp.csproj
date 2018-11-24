@@ -172,6 +172,12 @@
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllLoanDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.confirmAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CommunityWorkshopService\CWDataService.disco" />
     <None Include="Connected Services\CommunityWorkshopService\configuration91.svcinfo" />
     <None Include="Connected Services\CommunityWorkshopService\configuration.svcinfo" />

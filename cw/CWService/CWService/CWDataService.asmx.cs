@@ -269,7 +269,7 @@ namespace CWService
         * Checks to see if the username and password inputted are correct
         */
         [WebMethod]
-        public static bool ValidateUserCredentials(string user, string pass)
+        public bool confirmAccess(string user, string pass) // was having difficulty getting this to be called turns out WebMethods outside of a WebService are meant to be static inside a WebService can't be static
         {
             using (var db = Model.Database.GetConnection())
             {
@@ -290,8 +290,16 @@ namespace CWService
         [WebMethod]
         public List<Employees> SelectEmployeesByID(string ID)
         {
-            var query = $"SELECT * FROM Employees WHERE EmployeeID = {ID}";
+            var query = "SELECT * FROM Employees WHERE EmployeeID = @id";
+            var param = new { id = ID };
             return Model.Database.GetConnection().Query<Employees>(query).ToList();
+        }
+        [WebMethod]
+        public List<Employees> SelectEmployeesByName(string Name)
+        {
+            var query = "SELECT * FROM Employees WHERE StaffName = @name";
+            var param = new { name = Name };
+            return Model.Database.GetConnection().Query<Employees>(query, param).ToList();
         }
 
         [WebMethod]
@@ -425,8 +433,9 @@ namespace CWService
             {
                 try
                 {
-                    var query = $"DELETE FROM Loans WHERE LoanID = {ID}";
-                    var results = db.Execute(query, transaction);
+                    var query = "DELETE FROM Loans WHERE LoanID = @id";
+                    var param = new { id = ID };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
                 catch

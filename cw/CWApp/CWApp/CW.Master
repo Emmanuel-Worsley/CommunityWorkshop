@@ -44,8 +44,8 @@
             <div class ="topNav">
             <a href="/Website/Main.aspx">Home</a>
             <a href="/Website/Tools.aspx">Tools</a>
-            <a href="/Loans/Loans.aspx">Loans</a>
-            <a href="/Reports/Reports.aspx">Reports</a>
+            <a href="/Website/Loans.aspx">Loans</a>
+            <a href="/Website/Reports.aspx">Reports</a>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
