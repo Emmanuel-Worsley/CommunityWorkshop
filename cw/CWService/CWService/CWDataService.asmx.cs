@@ -26,14 +26,6 @@ namespace CWService
         }
 
         [WebMethod]
-        public List<Tools> SelectAllToolsAndBrandName()
-        {
-
-            var query = "SELECT Brands.BrandName, Tools.* FROM Brands INNER JOIN Tools on Brands.BrandID = Tools.BrandID;";
-            return Model.Database.GetConnection().Query<Tools>(query).ToList();
-        }
-
-        [WebMethod]
         public List<Tools> SelectAllTools ()
         {
             var query = "SELECT * FROM Tools";
@@ -363,6 +355,14 @@ namespace CWService
 
         #region Loans
         [WebMethod]
+        public List<AllData> SelectAllLoanData()
+        {
+            var query = "SELECT Loans.*, Employees.StaffName, Tools.ToolType, Patrons.PatronName FROM Tools INNER JOIN (Patrons INNER JOIN " +
+                "(Employees INNER JOIN Loans ON Employees.EmployeeID = Loans.EmployeeID) ON Patrons.PatronID = Loans.PatronID) ON Tools.ToolID = Loans.ToolID";
+            return Model.Database.GetConnection().Query<AllData>(query).ToList();
+        }
+
+        [WebMethod]
         public List<Loans> SelectAllLoans()
         {
             var query = "SELECT * FROM Loans";
@@ -384,9 +384,10 @@ namespace CWService
             {
                 try
                 {
-                    var time = DateTime.Now.Day;
-                    var query = $"INSERT INTO Loans (PatronID, ToolID, EmployeeID, WorkStation, DateLoaned) VALUES ({PatronID}, {ToolID}, {EmployeeID}, {WorkStation}, {time})";
-                    var results = db.Execute(query, transaction);
+                    DateTime time = DateTime.Now;
+                    var query = $"INSERT INTO Loans (PatronID, ToolID, EmployeeID, WorkStation, DateLoaned) VALUES (@patronID, @toolID, @employeeID, @workStation, @Time)";
+                    var param = new { patronID = PatronID, toolID = ToolID, employeeID = EmployeeID, workstation = WorkStation, Time = time };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
                 catch

@@ -161,14 +161,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
+    <Content Include="Website\Loans.aspx" />
     <Content Include="Website\Main.aspx" />
-    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllToolsAndBrandNameResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.AllData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllLoanDataResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\CommunityWorkshopService\CWDataService.disco" />
@@ -209,6 +210,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Website\Loans.aspx.cs">
+      <DependentUpon>Loans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\Loans.aspx.designer.cs">
+      <DependentUpon>Loans.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Website\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
