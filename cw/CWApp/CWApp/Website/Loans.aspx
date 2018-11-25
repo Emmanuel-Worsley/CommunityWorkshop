@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="padding-left: 1em;">
         <h3>Loans</h3>
-        <div class="alert-danger">
-            <asp:Label ID="lblStatus" runat="server" />
+        <div>
+            <asp:Label CssClass="alert-success" ID="lblStatus" runat="server" />
         </div>
         <br />
         Loan ID: <asp:Label ID="lblLoanID" runat="server" />
@@ -19,6 +19,7 @@
         <br />
         <asp:Button ID="btnNewLoan" runat="server" Text="New Loan" OnClick="btnNewLoan_Click" />
         <asp:Button ID="btnDeleteLoan" runat="server" Text="Delete Loan" OnClick="btnDeleteLoan_Click" />
+        <asp:Button ID="btnLoanReturn" runat="server" Text="Return Loan" OnClick="btnLoanReturn_Click" />
         <br />
         <br />
         <asp:GridView ID="gvLoans" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="gvLoans_SelectedIndexChanged">

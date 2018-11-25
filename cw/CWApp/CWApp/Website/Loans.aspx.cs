@@ -94,5 +94,21 @@ namespace CWApp.Website
             lblStatus.Text = "Deleted a loan";
             loadAll();
         }
+
+        protected void btnLoanReturn_Click(object sender, EventArgs e)
+        {
+            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
+            if (gvLoans.SelectedRow.Cells[6].Text.Equals(DateTime.MinValue.ToString()))
+            {
+                svc.UpdateLoan(lblLoanID.Text);
+                lblStatus.Text = "Returned Loan " + lblLoanID.Text;
+                loadAll();
+            }
+            else
+            {
+                lblStatus.CssClass = "alert-danger";
+                lblStatus.Text = "This Loan has already been returned.";
+            }
+        }
     }
 }

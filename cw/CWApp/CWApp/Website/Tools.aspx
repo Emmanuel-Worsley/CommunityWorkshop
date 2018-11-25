@@ -5,14 +5,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="padding-left: 1em;">
         <h3>Tools</h3>
-        <div class="alert-danger">
+        <div class="alert-success">
             <asp:label ID="lblStatus" runat="server" />
         </div>
         <br />
-        Tool ID: <asp:Label ID="lblToolID" runat="server" /><br />
+        Tool ID: <asp:Label ID="lblToolID" runat="server"/><br />
         Tool Type: <asp:TextBox ID="txtToolType" runat="server" /><br />
+        <div style="padding-top: 0.3em">
         Comment: <asp:TextBox ID="txtComment" runat="server" /> <br/>
+        </div>
+        <div style="padding-top: 0.3em">
         Brand: <asp:DropDownList ID="ddlBrand" runat="server" AutoPostBack="false" /><br />
+        </div>
         Active: <asp:CheckBox ID="chkActive" runat="server" /><br />
         <asp:Button ID="btnNewTool" runat="server" Text="Add new tool" OnClick="btnNewTool_Click"/>
         <asp:Button ID="btnUpdateTool" runat="server" Text="Update Tool" OnClick="btnUpdateTool_Click" />

@@ -6,8 +6,8 @@
     <div class="container-fluid">
         <div class="row" style="padding-left: 2em;">
             <div class="col-4; display-5" style="border-style: outset; background-color: aqua;">
-                <h2>Reports On Tools:</h2>
-                <asp:DropDownList ID="ddlTools" runat="server" />
+                <h5>Tool Reports</h5>
+                <asp:DropDownList ID="ddlTools" runat="server" OnSelectedIndexChanged="ddlTools_SelectedIndexChanged" AutoPostBack="true" />
                 <asp:Button ID="btnCheckedOutTools" runat="server" Text="Checked Out Tools" OnClick="btnCheckedOutTools_Click" />
                 <br />
                 <asp:Button ID="btnActiveTools" runat="server" Text="Load Tools" OnClick="btnActiveTools_Click" />
@@ -15,7 +15,8 @@
                 Active
             </div>
             <div class="col-4; display-5" style="border-style: outset; background-color: yellow; padding-left: 0.5em;">
-                <h4>Test</h4>
+                <h5>Patron Reports</h5>
+                <asp:DropDownList ID="ddlPatrons" runat="server" OnSelectedIndexChanged="ddlPatrons_SelectedIndexChanged" AutoPostBack="true" />
             </div>
             <div class="col-4; display-5" style="border-style: outset; background-color: red; padding-left: 0.5em;">
                 <h4>Test</h4>
@@ -23,9 +24,8 @@
         </div>
     </div>
     <div class="table; display-5">
-        <asp:GridView ID="gvShowReports" runat="server" AutoGenerateColumns="true" OnRowDataBound="gvShowReports_RowDataBound">
+        <asp:GridView ID="gvShowReports" runat="server" AutoGenerateColumns="true">
             <HeaderStyle CssClass="active; align-content-center;" />
         </asp:GridView>
-        <asp:g
     </div>
 </asp:Content>

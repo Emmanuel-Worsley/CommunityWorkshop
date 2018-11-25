@@ -936,7 +936,7 @@ namespace CWApp.CommunityWorkshopService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InsertLoan", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.InsertLoanResponse> InsertLoanAsync(CWApp.CommunityWorkshopService.InsertLoanRequest request);
         
-        // CODEGEN: Generating message contract since element name LoanID from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name ID from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateLoan", ReplyAction="*")]
         CWApp.CommunityWorkshopService.UpdateLoanResponse UpdateLoan(CWApp.CommunityWorkshopService.UpdateLoanRequest request);
         
@@ -963,6 +963,20 @@ namespace CWApp.CommunityWorkshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllCheckedoutTools", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse> SelectAllCheckedoutToolsAsync(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest request);
+        
+        // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/loadHistoryOfTool", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.loadHistoryOfToolResponse loadHistoryOfTool(CWApp.CommunityWorkshopService.loadHistoryOfToolRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/loadHistoryOfTool", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.loadHistoryOfToolResponse> loadHistoryOfToolAsync(CWApp.CommunityWorkshopService.loadHistoryOfToolRequest request);
+        
+        // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/loadHistoryOfPatron", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.loadHistoryOfPatronResponse loadHistoryOfPatron(CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/loadHistoryOfPatron", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.loadHistoryOfPatronResponse> loadHistoryOfPatronAsync(CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2757,13 +2771,13 @@ namespace CWApp.CommunityWorkshopService {
     public partial class UpdateLoanRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string LoanID;
+        public string ID;
         
         public UpdateLoanRequestBody() {
         }
         
-        public UpdateLoanRequestBody(string LoanID) {
-            this.LoanID = LoanID;
+        public UpdateLoanRequestBody(string ID) {
+            this.ID = ID;
         }
     }
     
@@ -2981,6 +2995,142 @@ namespace CWApp.CommunityWorkshopService {
         
         public SelectAllCheckedoutToolsResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllCheckedoutToolsResult) {
             this.SelectAllCheckedoutToolsResult = SelectAllCheckedoutToolsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class loadHistoryOfToolRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="loadHistoryOfTool", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.loadHistoryOfToolRequestBody Body;
+        
+        public loadHistoryOfToolRequest() {
+        }
+        
+        public loadHistoryOfToolRequest(CWApp.CommunityWorkshopService.loadHistoryOfToolRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class loadHistoryOfToolRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string id;
+        
+        public loadHistoryOfToolRequestBody() {
+        }
+        
+        public loadHistoryOfToolRequestBody(string id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class loadHistoryOfToolResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="loadHistoryOfToolResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.loadHistoryOfToolResponseBody Body;
+        
+        public loadHistoryOfToolResponse() {
+        }
+        
+        public loadHistoryOfToolResponse(CWApp.CommunityWorkshopService.loadHistoryOfToolResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class loadHistoryOfToolResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.AllData[] loadHistoryOfToolResult;
+        
+        public loadHistoryOfToolResponseBody() {
+        }
+        
+        public loadHistoryOfToolResponseBody(CWApp.CommunityWorkshopService.AllData[] loadHistoryOfToolResult) {
+            this.loadHistoryOfToolResult = loadHistoryOfToolResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class loadHistoryOfPatronRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="loadHistoryOfPatron", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.loadHistoryOfPatronRequestBody Body;
+        
+        public loadHistoryOfPatronRequest() {
+        }
+        
+        public loadHistoryOfPatronRequest(CWApp.CommunityWorkshopService.loadHistoryOfPatronRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class loadHistoryOfPatronRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string id;
+        
+        public loadHistoryOfPatronRequestBody() {
+        }
+        
+        public loadHistoryOfPatronRequestBody(string id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class loadHistoryOfPatronResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="loadHistoryOfPatronResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.loadHistoryOfPatronResponseBody Body;
+        
+        public loadHistoryOfPatronResponse() {
+        }
+        
+        public loadHistoryOfPatronResponse(CWApp.CommunityWorkshopService.loadHistoryOfPatronResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class loadHistoryOfPatronResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.AllData[] loadHistoryOfPatronResult;
+        
+        public loadHistoryOfPatronResponseBody() {
+        }
+        
+        public loadHistoryOfPatronResponseBody(CWApp.CommunityWorkshopService.AllData[] loadHistoryOfPatronResult) {
+            this.loadHistoryOfPatronResult = loadHistoryOfPatronResult;
         }
     }
     
@@ -3700,10 +3850,10 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.UpdateLoan(request);
         }
         
-        public void UpdateLoan(string LoanID) {
+        public void UpdateLoan(string ID) {
             CWApp.CommunityWorkshopService.UpdateLoanRequest inValue = new CWApp.CommunityWorkshopService.UpdateLoanRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.UpdateLoanRequestBody();
-            inValue.Body.LoanID = LoanID;
+            inValue.Body.ID = ID;
             CWApp.CommunityWorkshopService.UpdateLoanResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).UpdateLoan(inValue);
         }
         
@@ -3712,10 +3862,10 @@ namespace CWApp.CommunityWorkshopService {
             return base.Channel.UpdateLoanAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateLoanResponse> UpdateLoanAsync(string LoanID) {
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateLoanResponse> UpdateLoanAsync(string ID) {
             CWApp.CommunityWorkshopService.UpdateLoanRequest inValue = new CWApp.CommunityWorkshopService.UpdateLoanRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.UpdateLoanRequestBody();
-            inValue.Body.LoanID = LoanID;
+            inValue.Body.ID = ID;
             return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).UpdateLoanAsync(inValue);
         }
         
@@ -3789,6 +3939,56 @@ namespace CWApp.CommunityWorkshopService {
             CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequestBody();
             return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllCheckedoutToolsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.loadHistoryOfToolResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.loadHistoryOfTool(CWApp.CommunityWorkshopService.loadHistoryOfToolRequest request) {
+            return base.Channel.loadHistoryOfTool(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.AllData[] loadHistoryOfTool(string id) {
+            CWApp.CommunityWorkshopService.loadHistoryOfToolRequest inValue = new CWApp.CommunityWorkshopService.loadHistoryOfToolRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.loadHistoryOfToolRequestBody();
+            inValue.Body.id = id;
+            CWApp.CommunityWorkshopService.loadHistoryOfToolResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).loadHistoryOfTool(inValue);
+            return retVal.Body.loadHistoryOfToolResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.loadHistoryOfToolResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.loadHistoryOfToolAsync(CWApp.CommunityWorkshopService.loadHistoryOfToolRequest request) {
+            return base.Channel.loadHistoryOfToolAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.loadHistoryOfToolResponse> loadHistoryOfToolAsync(string id) {
+            CWApp.CommunityWorkshopService.loadHistoryOfToolRequest inValue = new CWApp.CommunityWorkshopService.loadHistoryOfToolRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.loadHistoryOfToolRequestBody();
+            inValue.Body.id = id;
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).loadHistoryOfToolAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.loadHistoryOfPatronResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.loadHistoryOfPatron(CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest request) {
+            return base.Channel.loadHistoryOfPatron(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.AllData[] loadHistoryOfPatron(string id) {
+            CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest inValue = new CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.loadHistoryOfPatronRequestBody();
+            inValue.Body.id = id;
+            CWApp.CommunityWorkshopService.loadHistoryOfPatronResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).loadHistoryOfPatron(inValue);
+            return retVal.Body.loadHistoryOfPatronResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.loadHistoryOfPatronResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.loadHistoryOfPatronAsync(CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest request) {
+            return base.Channel.loadHistoryOfPatronAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.loadHistoryOfPatronResponse> loadHistoryOfPatronAsync(string id) {
+            CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest inValue = new CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.loadHistoryOfPatronRequestBody();
+            inValue.Body.id = id;
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).loadHistoryOfPatronAsync(inValue);
         }
     }
 }

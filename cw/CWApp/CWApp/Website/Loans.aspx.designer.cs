@@ -67,6 +67,24 @@ namespace CWApp.Website {
         protected global::System.Web.UI.WebControls.Button btnNewLoan;
         
         /// <summary>
+        /// btnDeleteLoan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteLoan;
+        
+        /// <summary>
+        /// btnLoanReturn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLoanReturn;
+        
+        /// <summary>
         /// gvLoans control.
         /// </summary>
         /// <remarks>

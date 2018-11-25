@@ -406,20 +406,22 @@ namespace CWService
         }
 
         [WebMethod]
-        public void UpdateLoan(string LoanID)
+        public void UpdateLoan(string ID)
         {
             using (var db = Model.Database.GetConnection().OpenAndReturn())
             using (var transaction = db.BeginTransaction())
             {
                 try
                 {
-                    var time = DateTime.Now.Day;
-                    var query = $"UPDATE Loans SET DateReturn = {time} WHERE BrandID = {LoanID}";
-                    var results = db.Execute(query, transaction);
+                    DateTime time = DateTime.Now;
+                    var query = "UPDATE Loans SET DateReturn = @DateReturn WHERE LoanID = @LoanID";
+                    var param = new { LoanID = ID, DateReturn = time };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch(Exception ex)
                 {
+                    Console.WriteLine(ex);
                     transaction.Rollback();
                 }
             }
@@ -462,20 +464,24 @@ namespace CWService
             return Model.Database.GetConnection().Query<Tools>(query).ToList();
         }
 
-       /* [WebMethod]
-        public List<Tools> SelectAllCheckedoutTools()
-        {
-            var query = "SELECT Tools.Description, Tools.ToolID, Loans.ToolID FROM Loans INNER JOIN Tools ON Tools.ToolID = Loans.ToolID WHERE Loans.DateReturn IS NULL;";
-            return Model.Database.GetConnection().Query<Tools>(query).ToList();
-        }
-
         [WebMethod]
-        public List<Tools> SelectAllCheckedoutTools()
+        public List<AllData> loadHistoryOfTool(string id)
         {
-            var query = "SELECT Tools.Description, Tools.ToolID, Loans.ToolID FROM Loans INNER JOIN Tools ON Tools.ToolID = Loans.ToolID WHERE Loans.DateReturn IS NULL;";
-            return Model.Database.GetConnection().Query<Tools>(query).ToList();
+            var query = "SELECT Tools.ToolType, Loans.WorkStation, Loans.DateLoaned, Loans.DateReturn, Patrons.PatronName FROM Tools INNER JOIN (Loans INNER JOIN Patrons ON Loans.PatronID = Patrons.PatronID) ON Loans.ToolID = Tools.ToolID " +
+                "WHERE Tools.ToolID = @ToolID";
+            var param = new { ToolID = id };
+            return Model.Database.GetConnection().Query<AllData>(query, param).ToList();
         }
-        */
+        
+        [WebMethod]
+        public List<AllData> loadHistoryOfPatron(string id)
+        {
+            var query = "SELECT Tools.ToolType, Loans.WorkStation, Loans.DateLoaned, Loans.DateReturn, Patrons.PatronName FROM Tools INNER JOIN (Loans INNER JOIN Patrons ON Loans.PatronID = Patrons.PatronID) ON Loans.ToolID = Tools.ToolID " +
+                "WHERE Patrons.PatronID = @PatronID";
+            var param = new { PatronID = id };
+            return Model.Database.GetConnection().Query<AllData>(query, param).ToList();
+        }
+        
 
 
         #endregion

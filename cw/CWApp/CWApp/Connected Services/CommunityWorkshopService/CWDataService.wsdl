@@ -411,7 +411,7 @@
       <s:element name="UpdateLoan">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="LoanID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -449,6 +449,34 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SelectAllCheckedoutToolsResult" type="tns:ArrayOfTools" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadHistoryOfTool">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadHistoryOfToolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadHistoryOfToolResult" type="tns:ArrayOfAllData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadHistoryOfPatron">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loadHistoryOfPatronResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loadHistoryOfPatronResult" type="tns:ArrayOfAllData" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -640,6 +668,18 @@
   <wsdl:message name="SelectAllCheckedoutToolsSoapOut">
     <wsdl:part name="parameters" element="tns:SelectAllCheckedoutToolsResponse" />
   </wsdl:message>
+  <wsdl:message name="loadHistoryOfToolSoapIn">
+    <wsdl:part name="parameters" element="tns:loadHistoryOfTool" />
+  </wsdl:message>
+  <wsdl:message name="loadHistoryOfToolSoapOut">
+    <wsdl:part name="parameters" element="tns:loadHistoryOfToolResponse" />
+  </wsdl:message>
+  <wsdl:message name="loadHistoryOfPatronSoapIn">
+    <wsdl:part name="parameters" element="tns:loadHistoryOfPatron" />
+  </wsdl:message>
+  <wsdl:message name="loadHistoryOfPatronSoapOut">
+    <wsdl:part name="parameters" element="tns:loadHistoryOfPatronResponse" />
+  </wsdl:message>
   <wsdl:portType name="CWDataServiceSoap">
     <wsdl:operation name="SelectAllToolsAndBrand">
       <wsdl:input message="tns:SelectAllToolsAndBrandSoapIn" />
@@ -764,6 +804,14 @@
     <wsdl:operation name="SelectAllCheckedoutTools">
       <wsdl:input message="tns:SelectAllCheckedoutToolsSoapIn" />
       <wsdl:output message="tns:SelectAllCheckedoutToolsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadHistoryOfTool">
+      <wsdl:input message="tns:loadHistoryOfToolSoapIn" />
+      <wsdl:output message="tns:loadHistoryOfToolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loadHistoryOfPatron">
+      <wsdl:input message="tns:loadHistoryOfPatronSoapIn" />
+      <wsdl:output message="tns:loadHistoryOfPatronSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CWDataServiceSoap" type="tns:CWDataServiceSoap">
@@ -1047,6 +1095,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="loadHistoryOfTool">
+      <soap:operation soapAction="http://tempuri.org/loadHistoryOfTool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadHistoryOfPatron">
+      <soap:operation soapAction="http://tempuri.org/loadHistoryOfPatron" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CWDataServiceSoap12" type="tns:CWDataServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1322,6 +1388,24 @@
     </wsdl:operation>
     <wsdl:operation name="SelectAllCheckedoutTools">
       <soap12:operation soapAction="http://tempuri.org/SelectAllCheckedoutTools" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadHistoryOfTool">
+      <soap12:operation soapAction="http://tempuri.org/loadHistoryOfTool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadHistoryOfPatron">
+      <soap12:operation soapAction="http://tempuri.org/loadHistoryOfPatron" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
