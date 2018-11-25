@@ -18,7 +18,18 @@ namespace CWApp.Website
             {
                 loadTools();
                 loadPatronData();
+                loadBrands();
             }
+            /*
+            if(gvShowReports.HeaderRow == null)
+            {
+                btnExport.Visible = false;
+            }
+            else
+            {
+                btnExport.Visible = true;
+            }
+            */
         }
 
         public void loadTools()
@@ -34,6 +45,21 @@ namespace CWApp.Website
             ddlTools.DataTextField = "ToolType";
             ddlTools.DataSource = tools;
             ddlTools.DataBind();
+        }
+
+        public void loadBrands()
+        {
+            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
+            var brands = new List<object>();
+            foreach (var row in svc.SelectAllBrands())
+            {
+                var obj = new { row.BrandID, row.BrandName };
+                brands.Add(obj);
+            }
+            ddlBrands.DataValueField = "BrandID";
+            ddlBrands.DataTextField = "BrandName";
+            ddlBrands.DataSource = brands;
+            ddlBrands.DataBind();
         }
 
         public void loadPatronData()
@@ -75,18 +101,15 @@ namespace CWApp.Website
 
         public void exportCsv(string csv)
         {
-            string attachment = "attachment; fileName=Testing.csv";
-            HttpContext.Current.Response.Clear();
-            HttpContext.Current.Response.ClearHeaders();
-            HttpContext.Current.Response.ClearContent();
-            HttpContext.Current.Response.AddHeader("content-disposition", attachment);
-            /*
-            HttpContext.Current.Response.ContentType = "text/csv";
-            HttpContext.Current.Response.AddHeader("Pragma", "Public");
-            */
-            HttpContext.Current.Response.Write(csv);
-            HttpContext.Current.Response.End();
-            //HttpContext.Current.ApplicationInstance.CompleteRequest();
+            var response = HttpContext.Current.Response; // Create a HttpContext
+            string attachment = "attachment; filename=Report.csv";
+            response.ClearContent(); // Clears all content from the buffer stream
+            response.Clear(); // Clears all content from the buffer stream
+            response.ClearHeaders(); // Clears all headers from the bufferstream
+            response.AddHeader("Content-Disposition", attachment); // Content-Disposition tells the browser to treat the file like a attachment      
+            response.ContentType = "text/csv";
+            response.Write(csv); // write the file out to user
+            response.End(); // sends all output
         }
 
         protected void btnCheckedOutTools_Click(object sender, EventArgs e)
@@ -100,6 +123,7 @@ namespace CWApp.Website
             }
             gvShowReports.DataSource = tools;
             gvShowReports.DataBind();
+            createCSV(tools);
         }
 
         protected void btnActiveTools_Click(object sender, EventArgs e)
@@ -138,6 +162,7 @@ namespace CWApp.Website
             }
             gvShowReports.DataSource = tools;
             gvShowReports.DataBind();
+            createCSV(tools);
         }
 
         protected void ddlPatrons_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,11 +176,39 @@ namespace CWApp.Website
             }
             gvShowReports.DataSource = patrons;
             gvShowReports.DataBind();
+            createCSV(patrons);
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
             exportCsv(export);
+        }
+
+        protected void ddlBrands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
+            var brands = new List<object>();
+            if(chkBrandsActiveCheck.Checked)
+            {
+                foreach(var row in svc.SelectAllActiveBrands("1", ddlBrands.SelectedItem.Text))
+                {
+                    var obj = new { row.BrandName, row.ToolType, row.Comment };
+                    brands.Add(obj);
+                }
+                gvShowReports.DataSource = brands;
+                gvShowReports.DataBind();
+            }
+            else
+            {
+                foreach (var row in svc.SelectAllActiveBrands("0", ddlBrands.SelectedItem.Text))
+                {
+                    var obj = new { row.BrandName, row.ToolType, row.Comment };
+                    brands.Add(obj);
+                }
+                gvShowReports.DataSource = brands;
+                gvShowReports.DataBind();
+            }
+            createCSV(brands);
         }
     }
 }

@@ -56,9 +56,9 @@ namespace CWApp.Website
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
             var tools = new List<object>();
-            foreach (var row in svc.SelectAllTools())
+            foreach (var row in svc.SelectAllActiveToolsAndNotOnLoan("1"))
             {
-                var obj = new { row.ToolID, row.ToolType };
+                var obj = new { row.ToolID, row.ToolType};
                 tools.Add(obj);        
             }
             ddlTools.DataValueField = "ToolID";
@@ -72,7 +72,7 @@ namespace CWApp.Website
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
             var employee = svc.SelectEmployeesByName(Context.User.Identity.Name);
-            svc.InsertLoan(ddlPatrons.SelectedValue, ddlTools.SelectedIndex.ToString(), employee[0].EmployeeID.ToString(), txtWorkstation.Text);
+            svc.InsertLoan(ddlPatrons.SelectedValue, ddlTools.SelectedValue, employee[0].EmployeeID.ToString(), txtWorkstation.Text);
             lblStatus.Text = "Created a new Loan";
             loadAll();
         }
@@ -84,7 +84,7 @@ namespace CWApp.Website
             lblLoanID.Text = record[0].LoanID.ToString();
             txtWorkstation.Text = record[0].WorkStation;
             ddlPatrons.SelectedValue = record[0].PatronID.ToString();
-            ddlTools.SelectedValue = record[0].ToolID.ToString();
+            //ddlTools.SelectedValue = record[0].ToolID.ToString();
         }
 
         protected void btnDeleteLoan_Click(object sender, EventArgs e)
@@ -98,16 +98,17 @@ namespace CWApp.Website
         protected void btnLoanReturn_Click(object sender, EventArgs e)
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
-            if (gvLoans.SelectedRow.Cells[6].Text.Equals(DateTime.MinValue.ToString()))
+            if (lblLoanID.Text != ("") && gvLoans.SelectedRow.Cells[6].Text.Equals(DateTime.MinValue.ToString()))
             {
                 svc.UpdateLoan(lblLoanID.Text);
                 lblStatus.Text = "Returned Loan " + lblLoanID.Text;
                 loadAll();
+                lblStatus.CssClass = "alert-success";
             }
             else
             {
                 lblStatus.CssClass = "alert-danger";
-                lblStatus.Text = "This Loan has already been returned.";
+                lblStatus.Text = "Error Loan either already returned or no loan selected.";
             }
         }
     }

@@ -964,6 +964,13 @@ namespace CWApp.CommunityWorkshopService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllCheckedoutTools", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse> SelectAllCheckedoutToolsAsync(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest request);
         
+        // CODEGEN: Generating message contract since element name active from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse SelectAllActiveToolsAndNotOnLoan(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> SelectAllActiveToolsAndNotOnLoanAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request);
+        
         // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/loadHistoryOfTool", ReplyAction="*")]
         CWApp.CommunityWorkshopService.loadHistoryOfToolResponse loadHistoryOfTool(CWApp.CommunityWorkshopService.loadHistoryOfToolRequest request);
@@ -977,6 +984,13 @@ namespace CWApp.CommunityWorkshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/loadHistoryOfPatron", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.loadHistoryOfPatronResponse> loadHistoryOfPatronAsync(CWApp.CommunityWorkshopService.loadHistoryOfPatronRequest request);
+        
+        // CODEGEN: Generating message contract since element name active from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveBrands", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse SelectAllActiveBrands(CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveBrands", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse> SelectAllActiveBrandsAsync(CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3002,6 +3016,74 @@ namespace CWApp.CommunityWorkshopService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveToolsAndNotOnLoanRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveToolsAndNotOnLoan", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody Body;
+        
+        public SelectAllActiveToolsAndNotOnLoanRequest() {
+        }
+        
+        public SelectAllActiveToolsAndNotOnLoanRequest(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllActiveToolsAndNotOnLoanRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string active;
+        
+        public SelectAllActiveToolsAndNotOnLoanRequestBody() {
+        }
+        
+        public SelectAllActiveToolsAndNotOnLoanRequestBody(string active) {
+            this.active = active;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveToolsAndNotOnLoanResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveToolsAndNotOnLoanResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponseBody Body;
+        
+        public SelectAllActiveToolsAndNotOnLoanResponse() {
+        }
+        
+        public SelectAllActiveToolsAndNotOnLoanResponse(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllActiveToolsAndNotOnLoanResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoanResult;
+        
+        public SelectAllActiveToolsAndNotOnLoanResponseBody() {
+        }
+        
+        public SelectAllActiveToolsAndNotOnLoanResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoanResult) {
+            this.SelectAllActiveToolsAndNotOnLoanResult = SelectAllActiveToolsAndNotOnLoanResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class loadHistoryOfToolRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="loadHistoryOfTool", Namespace="http://tempuri.org/", Order=0)]
@@ -3131,6 +3213,78 @@ namespace CWApp.CommunityWorkshopService {
         
         public loadHistoryOfPatronResponseBody(CWApp.CommunityWorkshopService.AllData[] loadHistoryOfPatronResult) {
             this.loadHistoryOfPatronResult = loadHistoryOfPatronResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveBrandsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveBrands", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequestBody Body;
+        
+        public SelectAllActiveBrandsRequest() {
+        }
+        
+        public SelectAllActiveBrandsRequest(CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllActiveBrandsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string active;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string brandName;
+        
+        public SelectAllActiveBrandsRequestBody() {
+        }
+        
+        public SelectAllActiveBrandsRequestBody(string active, string brandName) {
+            this.active = active;
+            this.brandName = brandName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveBrandsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveBrandsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponseBody Body;
+        
+        public SelectAllActiveBrandsResponse() {
+        }
+        
+        public SelectAllActiveBrandsResponse(CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllActiveBrandsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.AllData[] SelectAllActiveBrandsResult;
+        
+        public SelectAllActiveBrandsResponseBody() {
+        }
+        
+        public SelectAllActiveBrandsResponseBody(CWApp.CommunityWorkshopService.AllData[] SelectAllActiveBrandsResult) {
+            this.SelectAllActiveBrandsResult = SelectAllActiveBrandsResult;
         }
     }
     
@@ -3942,6 +4096,31 @@ namespace CWApp.CommunityWorkshopService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveToolsAndNotOnLoan(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request) {
+            return base.Channel.SelectAllActiveToolsAndNotOnLoan(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoan(string active) {
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody();
+            inValue.Body.active = active;
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveToolsAndNotOnLoan(inValue);
+            return retVal.Body.SelectAllActiveToolsAndNotOnLoanResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveToolsAndNotOnLoanAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request) {
+            return base.Channel.SelectAllActiveToolsAndNotOnLoanAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> SelectAllActiveToolsAndNotOnLoanAsync(string active) {
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody();
+            inValue.Body.active = active;
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveToolsAndNotOnLoanAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         CWApp.CommunityWorkshopService.loadHistoryOfToolResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.loadHistoryOfTool(CWApp.CommunityWorkshopService.loadHistoryOfToolRequest request) {
             return base.Channel.loadHistoryOfTool(request);
         }
@@ -3989,6 +4168,33 @@ namespace CWApp.CommunityWorkshopService {
             inValue.Body = new CWApp.CommunityWorkshopService.loadHistoryOfPatronRequestBody();
             inValue.Body.id = id;
             return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).loadHistoryOfPatronAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveBrands(CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest request) {
+            return base.Channel.SelectAllActiveBrands(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.AllData[] SelectAllActiveBrands(string active, string brandName) {
+            CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequestBody();
+            inValue.Body.active = active;
+            inValue.Body.brandName = brandName;
+            CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveBrands(inValue);
+            return retVal.Body.SelectAllActiveBrandsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveBrandsAsync(CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest request) {
+            return base.Channel.SelectAllActiveBrandsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse> SelectAllActiveBrandsAsync(string active, string brandName) {
+            CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveBrandsRequestBody();
+            inValue.Body.active = active;
+            inValue.Body.brandName = brandName;
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveBrandsAsync(inValue);
         }
     }
 }

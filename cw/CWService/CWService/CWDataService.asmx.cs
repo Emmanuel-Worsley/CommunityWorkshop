@@ -463,6 +463,13 @@ namespace CWService
             var query = "SELECT Tools.ToolType, Tools.ToolID, Tools.Comment, Tools.Active, Loans.ToolID FROM Loans INNER JOIN Tools ON Tools.ToolID = Loans.ToolID WHERE Loans.DateReturn IS NULL;";
             return Model.Database.GetConnection().Query<Tools>(query).ToList();
         }
+        [WebMethod]
+        public List<Tools> SelectAllActiveToolsAndNotOnLoan(string active)
+        {
+            var query = "SELECT Tools.ToolType, Tools.ToolID, Tools.Comment, Tools.Active FROM Tools LEFT JOIN Loans ON Loans.ToolID = Tools.ToolID WHERE Tools.Active = @Active AND Loans.DateLoaned IS NULL AND Loans.DateReturn IS NULL;";
+            var param = new { Active = active };
+            return Model.Database.GetConnection().Query<Tools>(query, param).ToList();
+        }
 
         [WebMethod]
         public List<AllData> loadHistoryOfTool(string id)
@@ -480,6 +487,16 @@ namespace CWService
                 "WHERE Patrons.PatronID = @PatronID";
             var param = new { PatronID = id };
             return Model.Database.GetConnection().Query<AllData>(query, param).ToList();
+        }
+
+        [WebMethod]
+        public List <AllData> SelectAllActiveBrands(string active, string brandName)
+        {
+            var query = "SELECT Tools.Active, Tools.ToolType, Tools.Comment, Brands.BrandName FROM Tools LEFT JOIN Brands ON Tools.BrandID = Brands.BrandID WHERE Brands.BrandName = @BrandName AND Tools.Active = @Active ORDER BY Tools.ToolType";
+            var param = new { Active = active, BrandName = brandName };
+            return Model.Database.GetConnection().Query<AllData>(query, param).ToList();
+
+
         }
         
 
