@@ -30,7 +30,7 @@ namespace CWApp.Website
             var loans = new List<object>();
             foreach (var row in svc.SelectAllLoanData())
             {
-                var obj = new { row.LoanID, row.ToolType, row.WorkStation, row.DateLoaned, row.DateReturn, row.PatronName, row.StaffName};
+                var obj = new { row.LoanID, row.ToolType, row.WorkStation, row.DateLoaned, row.DateReturn, row.PatronName, row.StaffName };
                 loans.Add(obj);
             }
             gvLoans.DataSource = loans;

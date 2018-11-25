@@ -28,4 +28,6 @@
             <HeaderStyle CssClass="active; align-content-center;" />
         </asp:GridView>
     </div>
+    <br />
+    <asp:Button ID="btnSave" runat="server" Text="Export Report" OnClick="btnSave_Click" />
 </asp:Content>

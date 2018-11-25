@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -9,6 +11,7 @@ namespace CWApp.Website
 {
     public partial class Reports : System.Web.UI.Page
     {
+        public static string export;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -48,6 +51,44 @@ namespace CWApp.Website
             ddlPatrons.DataBind();
         }
 
+        public void createCSV(List<object> data)
+
+        {
+            var csv = new StringBuilder();
+            for (int i = 0; i < data.Count; i++)
+            {
+                csv.Append(data[i].ToString());
+                if(i == 0)
+                {
+                    csv.Remove(csv.Length - (data[i].ToString().Length), 2); // removes first 2 
+                }
+                else
+                {
+                    csv.Remove(csv.Length - (data[i].ToString().Length - 1), 1); // removes first 2 
+                    csv.Replace('{', ',');
+                }
+                csv.Remove(csv.Length - 2, 2); // removes last 2 from the csv
+            }
+            csv.Replace(", ", ",");
+            export = csv.ToString();
+        }
+
+        public void exportCsv(string csv)
+        {
+            string attachment = "attachment; fileName=Testing.csv";
+            HttpContext.Current.Response.Clear();
+            HttpContext.Current.Response.ClearHeaders();
+            HttpContext.Current.Response.ClearContent();
+            HttpContext.Current.Response.AddHeader("content-disposition", attachment);
+            /*
+            HttpContext.Current.Response.ContentType = "text/csv";
+            HttpContext.Current.Response.AddHeader("Pragma", "Public");
+            */
+            HttpContext.Current.Response.Write(csv);
+            HttpContext.Current.Response.End();
+            //HttpContext.Current.ApplicationInstance.CompleteRequest();
+        }
+
         protected void btnCheckedOutTools_Click(object sender, EventArgs e)
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
@@ -83,6 +124,7 @@ namespace CWApp.Website
             }
             gvShowReports.DataSource = tools;
             gvShowReports.DataBind();
+            createCSV(tools);
         }
 
         protected void ddlTools_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,27 +152,10 @@ namespace CWApp.Website
             gvShowReports.DataSource = patrons;
             gvShowReports.DataBind();
         }
-        /*
-protected void gvShowReports_RowDataBound(object sender, GridViewRowEventArgs e)
-{
-if(e.Row.RowType == DataControlRowType.DataRow)
-{
-object test = e.Row.DataItem;
-if(test.Equals(false))
-{
-e.Row.Cells[Convert.ToInt32(e.Row.DataItem)].Text = "1";
-}
-else
-{
-e.Row.Cells[Convert.ToInt32(e.Row.DataItem)].Text = "0";
-}
 
-e.Row.Cells[0].Text = "Tool Type";
-e.Row.Cells[1].Text = "Comment";
-e.Row.Cells[2].Text = "Active";
-
-}
-}
-*/
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            exportCsv(export);
+        }
     }
 }
