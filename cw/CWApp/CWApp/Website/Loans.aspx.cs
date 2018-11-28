@@ -93,6 +93,7 @@ namespace CWApp.Website
             svc.RemoveLoan(lblLoanID.Text);
             lblStatus.Text = "Deleted a loan";
             loadAll();
+            lblLoanID.Text = "";
         }
 
         protected void btnLoanReturn_Click(object sender, EventArgs e)
@@ -104,6 +105,7 @@ namespace CWApp.Website
                 lblStatus.Text = "Returned Loan " + lblLoanID.Text;
                 loadAll();
                 lblStatus.CssClass = "alert-success";
+                lblLoanID.Text = "";
             }
             else
             {

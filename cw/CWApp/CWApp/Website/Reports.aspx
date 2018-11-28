@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
+        <asp:Label ID="lblStatus" CssClass="alert-danger" runat="server" />
         <div class="row" style="padding-left: 0.5em;">
             <div class="col-4; display-5" style="border-style: outset; background-color: aqua;">
                 <h5>Tool Reports</h5>

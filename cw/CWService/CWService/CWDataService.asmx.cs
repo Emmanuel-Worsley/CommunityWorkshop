@@ -187,8 +187,9 @@ namespace CWService
         [WebMethod]
         public List<Patrons> SelectPatronsByID(string ID)
         {
-            var query = $"SELECT * FROM Patrons WHERE PatronID = {ID}";
-            return Model.Database.GetConnection().Query<Patrons>(query).ToList();
+            var query = "SELECT * FROM Patrons WHERE PatronID = @id";
+            var param = new { id = ID };
+            return Model.Database.GetConnection().Query<Patrons>(query, param).ToList();
         }
 
         [WebMethod]
@@ -199,8 +200,9 @@ namespace CWService
             {
                 try
                 {
-                    var query = $"INSERT INTO Patrons (PatronName, ContactNumber) VALUES ({PatronName}, {contactNumber})";
-                    var results = db.Execute(query, transaction);
+                    var query = "INSERT INTO Patrons (PatronName, ContactNumber) VALUES (@patronName, @ContactNumber)";
+                    var param = new { patronName = PatronName, ContactNumber = contactNumber };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
                 catch
@@ -218,12 +220,14 @@ namespace CWService
             {
                 try
                 {
-                    var query = $"UPDATE Patrons SET PatronName = {patronName}, ContactNumber = {contactNumber}, WHERE BrandID = {patronID}";
-                    var results = db.Execute(query, transaction);
+                    var query = "UPDATE Patrons SET PatronName = @PatronName, ContactNumber = @ContactNumber WHERE PatronID = @PatronID";
+                    var param = new { PatronName = patronName, ContactNumber = contactNumber, PatronID = patronID };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
-                catch
+                catch(Exception ex)
                 {
+                    Console.WriteLine(ex);
                     transaction.Rollback();
                 }
             }
@@ -237,8 +241,9 @@ namespace CWService
             {
                 try
                 {
-                    var query = $"DELETE FROM Patrons WHERE PatronID = {ID}";
-                    var results = db.Execute(query, transaction);
+                    var query = "DELETE FROM Patrons WHERE PatronID = @id";
+                    var param = new { id = ID };
+                    var results = db.Execute(query, param, transaction);
                     transaction.Commit();
                 }
                 catch
@@ -466,7 +471,9 @@ namespace CWService
         [WebMethod]
         public List<Tools> SelectAllActiveToolsAndNotOnLoan(string active)
         {
-            var query = "SELECT Tools.ToolType, Tools.ToolID, Tools.Comment, Tools.Active FROM Tools LEFT JOIN Loans ON Loans.ToolID = Tools.ToolID WHERE Tools.Active = @Active AND Loans.DateLoaned IS NULL AND Loans.DateReturn IS NULL;";
+            // Old query that was broken
+            //var query = "SELECT Tools.ToolType, Tools.ToolID, Tools.Comment, Tools.Active FROM Tools LEFT JOIN Loans ON Loans.ToolID = Tools.ToolID WHERE Tools.Active = @Active AND Loans.DateLoaned IS NULL AND Loans.DateReturn IS NULL;";
+            var query = "SELECT Tools.ToolType, Tools.ToolID, Tools.Comment, Tools.Active FROM Tools WHERE Tools.ToolID NOT IN(SELECT Tools.ToolID FROM Loans INNER JOIN Tools ON Tools.ToolID = Loans.ToolID WHERE Loans.DateReturn IS NULL)  AND Tools.Active = @Active";
             var param = new { Active = active };
             return Model.Database.GetConnection().Query<Tools>(query, param).ToList();
         }

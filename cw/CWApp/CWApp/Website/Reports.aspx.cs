@@ -20,16 +20,7 @@ namespace CWApp.Website
                 loadPatronData();
                 loadBrands();
             }
-            /*
-            if(gvShowReports.HeaderRow == null)
-            {
-                btnExport.Visible = false;
-            }
-            else
-            {
-                btnExport.Visible = true;
-            }
-            */
+           
         }
 
         public void loadTools()
@@ -181,7 +172,17 @@ namespace CWApp.Website
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            exportCsv(export);
+            
+            if(gvShowReports.HeaderRow == null)
+            {
+                lblStatus.Text = "There is no data in the table to export";
+            }
+            else
+            {
+                exportCsv(export);
+            }
+            
+            
         }
 
         protected void ddlBrands_SelectedIndexChanged(object sender, EventArgs e)
