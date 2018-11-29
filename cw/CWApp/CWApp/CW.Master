@@ -48,6 +48,7 @@
             <div class="topNav">
                 <a href="/Website/Main.aspx">Home</a>
                 <a href="/Website/Patrons.aspx">Patrons</a>
+                <a href="/Website/Brands.aspx">Brands</a>
                 <a href="/Website/Tools.aspx">Tools</a>
                 <a href="/Website/Loans.aspx">Loans</a>
                 <a href="/Website/Reports.aspx">Reports</a>

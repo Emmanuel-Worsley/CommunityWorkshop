@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="lblStatus" CssClass="alert-danger" runat="server" />
+    <div style="text-align: center">
+        <asp:Label ID="lblStatus" CssClass="alert-danger" runat="server" />
+    </div>
     <div class="row" style="padding-left: 0.5em;">
         <div class="col-4" style="border-style: outset; background-color: lightcyan;">
             <h5>Tool Reports</h5>

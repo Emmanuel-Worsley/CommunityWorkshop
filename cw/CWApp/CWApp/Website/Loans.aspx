@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label CssClass="alert-success" ID="lblStatus" runat="server" />
+    <div style="text-align: center">
+        <asp:Label CssClass="alert-success" ID="lblStatus" runat="server" />
+    </div>
     <div class="row" style="padding-left: 0.5em;">
         <div class="col" style="text-align: center; border-style:outset; background-color: lightcyan;">
             <h5>Loans</h5>
