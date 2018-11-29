@@ -56,7 +56,7 @@ namespace CWApp.Website
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
             var tools = new List<object>();
-            foreach (var row in svc.SelectAllActiveToolsAndNotOnLoan("1"))
+            foreach (var row in svc.SelectAllActiveToolsAndNotOnLoan())
             {
                 var obj = new { row.ToolID, row.ToolType};
                 tools.Add(obj);        
@@ -65,7 +65,7 @@ namespace CWApp.Website
             ddlTools.DataTextField = "ToolType";
             ddlTools.DataSource = tools;
             ddlTools.DataBind();
-
+            
         }
 
         protected void btnNewLoan_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace CWApp.Website
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
             if (lblLoanID.Text != ("") && gvLoans.SelectedRow.Cells[6].Text.Equals(DateTime.MinValue.ToString()))
             {
-                svc.UpdateLoan(lblLoanID.Text);
+                svc.ReturnLoan(lblLoanID.Text);
                 lblStatus.Text = "Returned Loan " + lblLoanID.Text;
                 loadAll();
                 lblStatus.CssClass = "alert-success";

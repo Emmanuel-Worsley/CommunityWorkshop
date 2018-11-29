@@ -31,6 +31,15 @@ namespace CWApp.Website {
         protected global::System.Web.UI.WebControls.DropDownList ddlTools;
         
         /// <summary>
+        /// loadToolHistory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button loadToolHistory;
+        
+        /// <summary>
         /// btnCheckedOutTools control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace CWApp.Website {
         protected global::System.Web.UI.WebControls.DropDownList ddlPatrons;
         
         /// <summary>
+        /// btnLoadPatronHistory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLoadPatronHistory;
+        
+        /// <summary>
         /// ddlBrands control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace CWApp.Website {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlBrands;
+        
+        /// <summary>
+        /// btnLoadBrandHistory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLoadBrandHistory;
         
         /// <summary>
         /// chkBrandsActiveCheck control.

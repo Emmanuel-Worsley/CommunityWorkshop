@@ -151,9 +151,6 @@
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.UpdateEmployeeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.UpdateLoanResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.UpdatePatronResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -161,6 +158,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
+    <Content Include="Website\DragNDrop.jpg" />
     <Content Include="Website\Loans.aspx" />
     <Content Include="Website\Main.aspx" />
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllToolsAndBrandResponse.datasource">
@@ -170,9 +168,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllLoanDataResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.confirmAccessResponse.datasource">
@@ -190,10 +185,16 @@
     <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.loadHistoryOfToolResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse.datasource">
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllActiveBrandsResponse.datasource">
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectEmployeesByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.ReturnLoanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\CommunityWorkshopService\CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\CommunityWorkshopService\CWDataService.disco" />

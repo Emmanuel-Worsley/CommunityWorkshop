@@ -3,38 +3,40 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
-        <asp:Label ID="lblStatus" CssClass="alert-danger" runat="server" />
-        <div class="row" style="padding-left: 0.5em;">
-            <div class="col-4; display-5" style="border-style: outset; background-color: aqua;">
-                <h5>Tool Reports</h5>
-                <asp:DropDownList ID="ddlTools" runat="server" OnSelectedIndexChanged="ddlTools_SelectedIndexChanged" AutoPostBack="true" />
-                <asp:Button ID="btnCheckedOutTools" runat="server" Text="Checked Out Tools" OnClick="btnCheckedOutTools_Click" />
-                <br />
-                <asp:Button ID="btnActiveTools" runat="server" Text="Load Tools" OnClick="btnActiveTools_Click" />
-                <asp:CheckBox ID="chkActiveCheck" runat="server" />
-                Active
-            </div>
-            <div class="col-4; display-5" style="border-style: outset; background-color: yellow; padding-left: 0.5em;">
-                <h5>Patron Reports</h5>
-                <asp:DropDownList ID="ddlPatrons" runat="server" OnSelectedIndexChanged="ddlPatrons_SelectedIndexChanged" AutoPostBack="true" />
-            </div>
-            <div class="col-4; display-5" style="border-style: outset; background-color: lightcyan; padding-left: 0.5em;">
-                <h5>Brand Reports</h5>
-                <asp:DropDownList ID="ddlBrands" runat="server" OnSelectedIndexChanged="ddlBrands_SelectedIndexChanged" AutoPostBack="true" />
-                <br />
-                <asp:CheckBox ID="chkBrandsActiveCheck" runat="server" />
-                Active
-            </div>
+    <asp:Label ID="lblStatus" CssClass="alert-danger" runat="server" />
+    <div class="row" style="padding-left: 0.5em;">
+        <div class="col-4" style="border-style: outset; background-color: lightcyan;">
+            <h5>Tool Reports</h5>
+            <asp:DropDownList ID="ddlTools" runat="server" />
+            <asp:Button ID="loadToolHistory" runat="server" Text="Load History" OnClick="loadToolHistory_Click" />
+            <asp:Button ID="btnCheckedOutTools" runat="server" Text="Checked Out Tools" OnClick="btnCheckedOutTools_Click" />
+            <asp:Button ID="btnActiveTools" runat="server" Text="Load Tools" OnClick="btnActiveTools_Click" />
+            <asp:CheckBox ID="chkActiveCheck" runat="server" />
+            Active
+        </div>
+        <div class="col-4" style="border-style: outset; background-color: lightcyan; padding-left: 0.5em;">
+            <h5>Patron Reports</h5>
+            <asp:DropDownList ID="ddlPatrons" runat="server" />
+            <asp:Button ID="btnLoadPatronHistory" runat="server" Text="Load History" OnClick="btnLoadPatronHistory_Click" />
+        </div>
+        <div class="col-4" style="border-style: outset; background-color: lightcyan; padding-left: 0.5em;">
+            <h5>Brand Reports</h5>
+            <asp:DropDownList ID="ddlBrands" runat="server" />
+            <asp:Button ID="btnLoadBrandHistory" runat="server" Text="Load History" OnClick="btnLoadBrandHistory_Click" />
+            <asp:CheckBox ID="chkBrandsActiveCheck" runat="server" />
+            Active
         </div>
     </div>
-    <div class="table; display-5" style="padding-left: 0.5em;">
-        <asp:GridView ID="gvShowReports" runat="server" AutoGenerateColumns="true">
-            <HeaderStyle CssClass="active; align-content-center;" />
-        </asp:GridView>
-    </div>
     <br />
-    <div class="display-5" style="padding-left: 0.5em;">
-        <asp:Button ID="btnExport" runat="server" Text="Export Report" OnClick="btnSave_Click" />
+    <div class="container-fluid" style="text-align: center; width: 100%;">
+        <div class="table-">
+            <br />
+            <asp:GridView ID="gvShowReports" runat="server" AutoGenerateColumns="true" Width="100%">
+            </asp:GridView>
+            <br />
+            <asp:Button ID="btnExport" runat="server" Text="Export Report" OnClick="btnSave_Click" Font-Size="Large" />
+        </div>
     </div>
+
+    <br />
 </asp:Content>

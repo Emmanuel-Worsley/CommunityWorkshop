@@ -908,6 +908,13 @@ namespace CWApp.CommunityWorkshopService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RemoveEmployee", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.RemoveEmployeeResponse> RemoveEmployeeAsync(CWApp.CommunityWorkshopService.RemoveEmployeeRequest request);
         
+        // CODEGEN: Generating message contract since element name SelectAllActiveToolsAndNotOnLoanResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse SelectAllActiveToolsAndNotOnLoan(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> SelectAllActiveToolsAndNotOnLoanAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request);
+        
         // CODEGEN: Generating message contract since element name SelectAllLoanDataResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllLoanData", ReplyAction="*")]
         CWApp.CommunityWorkshopService.SelectAllLoanDataResponse SelectAllLoanData(CWApp.CommunityWorkshopService.SelectAllLoanDataRequest request);
@@ -937,11 +944,11 @@ namespace CWApp.CommunityWorkshopService {
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.InsertLoanResponse> InsertLoanAsync(CWApp.CommunityWorkshopService.InsertLoanRequest request);
         
         // CODEGEN: Generating message contract since element name ID from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateLoan", ReplyAction="*")]
-        CWApp.CommunityWorkshopService.UpdateLoanResponse UpdateLoan(CWApp.CommunityWorkshopService.UpdateLoanRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ReturnLoan", ReplyAction="*")]
+        CWApp.CommunityWorkshopService.ReturnLoanResponse ReturnLoan(CWApp.CommunityWorkshopService.ReturnLoanRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateLoan", ReplyAction="*")]
-        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateLoanResponse> UpdateLoanAsync(CWApp.CommunityWorkshopService.UpdateLoanRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ReturnLoan", ReplyAction="*")]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.ReturnLoanResponse> ReturnLoanAsync(CWApp.CommunityWorkshopService.ReturnLoanRequest request);
         
         // CODEGEN: Generating message contract since element name ID from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RemoveLoan", ReplyAction="*")]
@@ -963,13 +970,6 @@ namespace CWApp.CommunityWorkshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllCheckedoutTools", ReplyAction="*")]
         System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsResponse> SelectAllCheckedoutToolsAsync(CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest request);
-        
-        // CODEGEN: Generating message contract since element name active from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan", ReplyAction="*")]
-        CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse SelectAllActiveToolsAndNotOnLoan(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan", ReplyAction="*")]
-        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> SelectAllActiveToolsAndNotOnLoanAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request);
         
         // CODEGEN: Generating message contract since element name id from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/loadHistoryOfTool", ReplyAction="*")]
@@ -2502,6 +2502,67 @@ namespace CWApp.CommunityWorkshopService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveToolsAndNotOnLoanRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveToolsAndNotOnLoan", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody Body;
+        
+        public SelectAllActiveToolsAndNotOnLoanRequest() {
+        }
+        
+        public SelectAllActiveToolsAndNotOnLoanRequest(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SelectAllActiveToolsAndNotOnLoanRequestBody {
+        
+        public SelectAllActiveToolsAndNotOnLoanRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SelectAllActiveToolsAndNotOnLoanResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveToolsAndNotOnLoanResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponseBody Body;
+        
+        public SelectAllActiveToolsAndNotOnLoanResponse() {
+        }
+        
+        public SelectAllActiveToolsAndNotOnLoanResponse(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SelectAllActiveToolsAndNotOnLoanResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoanResult;
+        
+        public SelectAllActiveToolsAndNotOnLoanResponseBody() {
+        }
+        
+        public SelectAllActiveToolsAndNotOnLoanResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoanResult) {
+            this.SelectAllActiveToolsAndNotOnLoanResult = SelectAllActiveToolsAndNotOnLoanResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class SelectAllLoanDataRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllLoanData", Namespace="http://tempuri.org/", Order=0)]
@@ -2765,15 +2826,15 @@ namespace CWApp.CommunityWorkshopService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateLoanRequest {
+    public partial class ReturnLoanRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateLoan", Namespace="http://tempuri.org/", Order=0)]
-        public CWApp.CommunityWorkshopService.UpdateLoanRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ReturnLoan", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.ReturnLoanRequestBody Body;
         
-        public UpdateLoanRequest() {
+        public ReturnLoanRequest() {
         }
         
-        public UpdateLoanRequest(CWApp.CommunityWorkshopService.UpdateLoanRequestBody Body) {
+        public ReturnLoanRequest(CWApp.CommunityWorkshopService.ReturnLoanRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2782,15 +2843,15 @@ namespace CWApp.CommunityWorkshopService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class UpdateLoanRequestBody {
+    public partial class ReturnLoanRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string ID;
         
-        public UpdateLoanRequestBody() {
+        public ReturnLoanRequestBody() {
         }
         
-        public UpdateLoanRequestBody(string ID) {
+        public ReturnLoanRequestBody(string ID) {
             this.ID = ID;
         }
     }
@@ -2799,15 +2860,15 @@ namespace CWApp.CommunityWorkshopService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateLoanResponse {
+    public partial class ReturnLoanResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateLoanResponse", Namespace="http://tempuri.org/", Order=0)]
-        public CWApp.CommunityWorkshopService.UpdateLoanResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ReturnLoanResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CWApp.CommunityWorkshopService.ReturnLoanResponseBody Body;
         
-        public UpdateLoanResponse() {
+        public ReturnLoanResponse() {
         }
         
-        public UpdateLoanResponse(CWApp.CommunityWorkshopService.UpdateLoanResponseBody Body) {
+        public ReturnLoanResponse(CWApp.CommunityWorkshopService.ReturnLoanResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2816,9 +2877,9 @@ namespace CWApp.CommunityWorkshopService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class UpdateLoanResponseBody {
+    public partial class ReturnLoanResponseBody {
         
-        public UpdateLoanResponseBody() {
+        public ReturnLoanResponseBody() {
         }
     }
     
@@ -3009,74 +3070,6 @@ namespace CWApp.CommunityWorkshopService {
         
         public SelectAllCheckedoutToolsResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllCheckedoutToolsResult) {
             this.SelectAllCheckedoutToolsResult = SelectAllCheckedoutToolsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SelectAllActiveToolsAndNotOnLoanRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveToolsAndNotOnLoan", Namespace="http://tempuri.org/", Order=0)]
-        public CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody Body;
-        
-        public SelectAllActiveToolsAndNotOnLoanRequest() {
-        }
-        
-        public SelectAllActiveToolsAndNotOnLoanRequest(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class SelectAllActiveToolsAndNotOnLoanRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string active;
-        
-        public SelectAllActiveToolsAndNotOnLoanRequestBody() {
-        }
-        
-        public SelectAllActiveToolsAndNotOnLoanRequestBody(string active) {
-            this.active = active;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SelectAllActiveToolsAndNotOnLoanResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SelectAllActiveToolsAndNotOnLoanResponse", Namespace="http://tempuri.org/", Order=0)]
-        public CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponseBody Body;
-        
-        public SelectAllActiveToolsAndNotOnLoanResponse() {
-        }
-        
-        public SelectAllActiveToolsAndNotOnLoanResponse(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class SelectAllActiveToolsAndNotOnLoanResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoanResult;
-        
-        public SelectAllActiveToolsAndNotOnLoanResponseBody() {
-        }
-        
-        public SelectAllActiveToolsAndNotOnLoanResponseBody(CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoanResult) {
-            this.SelectAllActiveToolsAndNotOnLoanResult = SelectAllActiveToolsAndNotOnLoanResult;
         }
     }
     
@@ -3899,6 +3892,29 @@ namespace CWApp.CommunityWorkshopService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveToolsAndNotOnLoan(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request) {
+            return base.Channel.SelectAllActiveToolsAndNotOnLoan(request);
+        }
+        
+        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoan() {
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody();
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveToolsAndNotOnLoan(inValue);
+            return retVal.Body.SelectAllActiveToolsAndNotOnLoanResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveToolsAndNotOnLoanAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request) {
+            return base.Channel.SelectAllActiveToolsAndNotOnLoanAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> SelectAllActiveToolsAndNotOnLoanAsync() {
+            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody();
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveToolsAndNotOnLoanAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         CWApp.CommunityWorkshopService.SelectAllLoanDataResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllLoanData(CWApp.CommunityWorkshopService.SelectAllLoanDataRequest request) {
             return base.Channel.SelectAllLoanData(request);
         }
@@ -4000,27 +4016,27 @@ namespace CWApp.CommunityWorkshopService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CWApp.CommunityWorkshopService.UpdateLoanResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.UpdateLoan(CWApp.CommunityWorkshopService.UpdateLoanRequest request) {
-            return base.Channel.UpdateLoan(request);
+        CWApp.CommunityWorkshopService.ReturnLoanResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.ReturnLoan(CWApp.CommunityWorkshopService.ReturnLoanRequest request) {
+            return base.Channel.ReturnLoan(request);
         }
         
-        public void UpdateLoan(string ID) {
-            CWApp.CommunityWorkshopService.UpdateLoanRequest inValue = new CWApp.CommunityWorkshopService.UpdateLoanRequest();
-            inValue.Body = new CWApp.CommunityWorkshopService.UpdateLoanRequestBody();
+        public void ReturnLoan(string ID) {
+            CWApp.CommunityWorkshopService.ReturnLoanRequest inValue = new CWApp.CommunityWorkshopService.ReturnLoanRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.ReturnLoanRequestBody();
             inValue.Body.ID = ID;
-            CWApp.CommunityWorkshopService.UpdateLoanResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).UpdateLoan(inValue);
+            CWApp.CommunityWorkshopService.ReturnLoanResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).ReturnLoan(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateLoanResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.UpdateLoanAsync(CWApp.CommunityWorkshopService.UpdateLoanRequest request) {
-            return base.Channel.UpdateLoanAsync(request);
+        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.ReturnLoanResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.ReturnLoanAsync(CWApp.CommunityWorkshopService.ReturnLoanRequest request) {
+            return base.Channel.ReturnLoanAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.UpdateLoanResponse> UpdateLoanAsync(string ID) {
-            CWApp.CommunityWorkshopService.UpdateLoanRequest inValue = new CWApp.CommunityWorkshopService.UpdateLoanRequest();
-            inValue.Body = new CWApp.CommunityWorkshopService.UpdateLoanRequestBody();
+        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.ReturnLoanResponse> ReturnLoanAsync(string ID) {
+            CWApp.CommunityWorkshopService.ReturnLoanRequest inValue = new CWApp.CommunityWorkshopService.ReturnLoanRequest();
+            inValue.Body = new CWApp.CommunityWorkshopService.ReturnLoanRequestBody();
             inValue.Body.ID = ID;
-            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).UpdateLoanAsync(inValue);
+            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).ReturnLoanAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4093,31 +4109,6 @@ namespace CWApp.CommunityWorkshopService {
             CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest inValue = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequest();
             inValue.Body = new CWApp.CommunityWorkshopService.SelectAllCheckedoutToolsRequestBody();
             return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllCheckedoutToolsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveToolsAndNotOnLoan(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request) {
-            return base.Channel.SelectAllActiveToolsAndNotOnLoan(request);
-        }
-        
-        public CWApp.CommunityWorkshopService.Tools[] SelectAllActiveToolsAndNotOnLoan(string active) {
-            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest();
-            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody();
-            inValue.Body.active = active;
-            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse retVal = ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveToolsAndNotOnLoan(inValue);
-            return retVal.Body.SelectAllActiveToolsAndNotOnLoanResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> CWApp.CommunityWorkshopService.CWDataServiceSoap.SelectAllActiveToolsAndNotOnLoanAsync(CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest request) {
-            return base.Channel.SelectAllActiveToolsAndNotOnLoanAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanResponse> SelectAllActiveToolsAndNotOnLoanAsync(string active) {
-            CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest inValue = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequest();
-            inValue.Body = new CWApp.CommunityWorkshopService.SelectAllActiveToolsAndNotOnLoanRequestBody();
-            inValue.Body.active = active;
-            return ((CWApp.CommunityWorkshopService.CWDataServiceSoap)(this)).SelectAllActiveToolsAndNotOnLoanAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

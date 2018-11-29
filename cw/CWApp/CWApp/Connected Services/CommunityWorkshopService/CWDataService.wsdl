@@ -345,6 +345,16 @@
       <s:element name="RemoveEmployeeResponse">
         <s:complexType />
       </s:element>
+      <s:element name="SelectAllActiveToolsAndNotOnLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelectAllActiveToolsAndNotOnLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectAllActiveToolsAndNotOnLoanResult" type="tns:ArrayOfTools" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SelectAllLoanData">
         <s:complexType />
       </s:element>
@@ -408,14 +418,14 @@
       <s:element name="InsertLoanResponse">
         <s:complexType />
       </s:element>
-      <s:element name="UpdateLoan">
+      <s:element name="ReturnLoan">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="UpdateLoanResponse">
+      <s:element name="ReturnLoanResponse">
         <s:complexType />
       </s:element>
       <s:element name="RemoveLoan">
@@ -449,20 +459,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SelectAllCheckedoutToolsResult" type="tns:ArrayOfTools" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SelectAllActiveToolsAndNotOnLoan">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="active" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SelectAllActiveToolsAndNotOnLoanResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SelectAllActiveToolsAndNotOnLoanResult" type="tns:ArrayOfTools" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -649,6 +645,12 @@
   <wsdl:message name="RemoveEmployeeSoapOut">
     <wsdl:part name="parameters" element="tns:RemoveEmployeeResponse" />
   </wsdl:message>
+  <wsdl:message name="SelectAllActiveToolsAndNotOnLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectAllActiveToolsAndNotOnLoan" />
+  </wsdl:message>
+  <wsdl:message name="SelectAllActiveToolsAndNotOnLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectAllActiveToolsAndNotOnLoanResponse" />
+  </wsdl:message>
   <wsdl:message name="SelectAllLoanDataSoapIn">
     <wsdl:part name="parameters" element="tns:SelectAllLoanData" />
   </wsdl:message>
@@ -673,11 +675,11 @@
   <wsdl:message name="InsertLoanSoapOut">
     <wsdl:part name="parameters" element="tns:InsertLoanResponse" />
   </wsdl:message>
-  <wsdl:message name="UpdateLoanSoapIn">
-    <wsdl:part name="parameters" element="tns:UpdateLoan" />
+  <wsdl:message name="ReturnLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnLoan" />
   </wsdl:message>
-  <wsdl:message name="UpdateLoanSoapOut">
-    <wsdl:part name="parameters" element="tns:UpdateLoanResponse" />
+  <wsdl:message name="ReturnLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnLoanResponse" />
   </wsdl:message>
   <wsdl:message name="RemoveLoanSoapIn">
     <wsdl:part name="parameters" element="tns:RemoveLoan" />
@@ -696,12 +698,6 @@
   </wsdl:message>
   <wsdl:message name="SelectAllCheckedoutToolsSoapOut">
     <wsdl:part name="parameters" element="tns:SelectAllCheckedoutToolsResponse" />
-  </wsdl:message>
-  <wsdl:message name="SelectAllActiveToolsAndNotOnLoanSoapIn">
-    <wsdl:part name="parameters" element="tns:SelectAllActiveToolsAndNotOnLoan" />
-  </wsdl:message>
-  <wsdl:message name="SelectAllActiveToolsAndNotOnLoanSoapOut">
-    <wsdl:part name="parameters" element="tns:SelectAllActiveToolsAndNotOnLoanResponse" />
   </wsdl:message>
   <wsdl:message name="loadHistoryOfToolSoapIn">
     <wsdl:part name="parameters" element="tns:loadHistoryOfTool" />
@@ -814,6 +810,10 @@
       <wsdl:input message="tns:RemoveEmployeeSoapIn" />
       <wsdl:output message="tns:RemoveEmployeeSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SelectAllActiveToolsAndNotOnLoan">
+      <wsdl:input message="tns:SelectAllActiveToolsAndNotOnLoanSoapIn" />
+      <wsdl:output message="tns:SelectAllActiveToolsAndNotOnLoanSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SelectAllLoanData">
       <wsdl:input message="tns:SelectAllLoanDataSoapIn" />
       <wsdl:output message="tns:SelectAllLoanDataSoapOut" />
@@ -830,9 +830,9 @@
       <wsdl:input message="tns:InsertLoanSoapIn" />
       <wsdl:output message="tns:InsertLoanSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateLoan">
-      <wsdl:input message="tns:UpdateLoanSoapIn" />
-      <wsdl:output message="tns:UpdateLoanSoapOut" />
+    <wsdl:operation name="ReturnLoan">
+      <wsdl:input message="tns:ReturnLoanSoapIn" />
+      <wsdl:output message="tns:ReturnLoanSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RemoveLoan">
       <wsdl:input message="tns:RemoveLoanSoapIn" />
@@ -845,10 +845,6 @@
     <wsdl:operation name="SelectAllCheckedoutTools">
       <wsdl:input message="tns:SelectAllCheckedoutToolsSoapIn" />
       <wsdl:output message="tns:SelectAllCheckedoutToolsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SelectAllActiveToolsAndNotOnLoan">
-      <wsdl:input message="tns:SelectAllActiveToolsAndNotOnLoanSoapIn" />
-      <wsdl:output message="tns:SelectAllActiveToolsAndNotOnLoanSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="loadHistoryOfTool">
       <wsdl:input message="tns:loadHistoryOfToolSoapIn" />
@@ -1072,6 +1068,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectAllActiveToolsAndNotOnLoan">
+      <soap:operation soapAction="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectAllLoanData">
       <soap:operation soapAction="http://tempuri.org/SelectAllLoanData" style="document" />
       <wsdl:input>
@@ -1108,8 +1113,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateLoan">
-      <soap:operation soapAction="http://tempuri.org/UpdateLoan" style="document" />
+    <wsdl:operation name="ReturnLoan">
+      <soap:operation soapAction="http://tempuri.org/ReturnLoan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1137,15 +1142,6 @@
     </wsdl:operation>
     <wsdl:operation name="SelectAllCheckedoutTools">
       <soap:operation soapAction="http://tempuri.org/SelectAllCheckedoutTools" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SelectAllActiveToolsAndNotOnLoan">
-      <soap:operation soapAction="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1390,6 +1386,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SelectAllActiveToolsAndNotOnLoan">
+      <soap12:operation soapAction="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectAllLoanData">
       <soap12:operation soapAction="http://tempuri.org/SelectAllLoanData" style="document" />
       <wsdl:input>
@@ -1426,8 +1431,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateLoan">
-      <soap12:operation soapAction="http://tempuri.org/UpdateLoan" style="document" />
+    <wsdl:operation name="ReturnLoan">
+      <soap12:operation soapAction="http://tempuri.org/ReturnLoan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1455,15 +1460,6 @@
     </wsdl:operation>
     <wsdl:operation name="SelectAllCheckedoutTools">
       <soap12:operation soapAction="http://tempuri.org/SelectAllCheckedoutTools" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SelectAllActiveToolsAndNotOnLoan">
-      <soap12:operation soapAction="http://tempuri.org/SelectAllActiveToolsAndNotOnLoan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

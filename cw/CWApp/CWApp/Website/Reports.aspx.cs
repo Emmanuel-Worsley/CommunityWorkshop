@@ -142,33 +142,6 @@ namespace CWApp.Website
             createCSV(tools);
         }
 
-        protected void ddlTools_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
-            var tools = new List<object>();
-            foreach(var row in svc.loadHistoryOfTool(ddlTools.SelectedValue))
-            {
-                var obj = new { row.ToolType, row.WorkStation, row.DateLoaned, row.DateReturn, row.PatronName };
-                tools.Add(obj);
-            }
-            gvShowReports.DataSource = tools;
-            gvShowReports.DataBind();
-            createCSV(tools);
-        }
-
-        protected void ddlPatrons_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
-            var patrons = new List<object>();
-            foreach (var row in svc.loadHistoryOfPatron(ddlPatrons.SelectedValue))
-            {
-                var obj = new { row.PatronName, row.ToolType, row.WorkStation, row.DateLoaned, row.DateReturn };
-                patrons.Add(obj);
-            }
-            gvShowReports.DataSource = patrons;
-            gvShowReports.DataBind();
-            createCSV(patrons);
-        }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
@@ -185,13 +158,14 @@ namespace CWApp.Website
             
         }
 
-        protected void ddlBrands_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void btnLoadBrandHistory_Click(object sender, EventArgs e)
         {
             var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
             var brands = new List<object>();
-            if(chkBrandsActiveCheck.Checked)
+            if (chkBrandsActiveCheck.Checked)
             {
-                foreach(var row in svc.SelectAllActiveBrands("1", ddlBrands.SelectedItem.Text))
+                foreach (var row in svc.SelectAllActiveBrands("1", ddlBrands.SelectedItem.Text))
                 {
                     var obj = new { row.BrandName, row.ToolType, row.Comment };
                     brands.Add(obj);
@@ -210,6 +184,34 @@ namespace CWApp.Website
                 gvShowReports.DataBind();
             }
             createCSV(brands);
+        }
+
+        protected void btnLoadPatronHistory_Click(object sender, EventArgs e)
+        {
+            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
+            var patrons = new List<object>();
+            foreach (var row in svc.loadHistoryOfPatron(ddlPatrons.SelectedValue))
+            {
+                var obj = new { row.PatronName, row.ToolType, row.WorkStation, row.DateLoaned, row.DateReturn };
+                patrons.Add(obj);
+            }
+            gvShowReports.DataSource = patrons;
+            gvShowReports.DataBind();
+            createCSV(patrons);
+        }
+
+        protected void loadToolHistory_Click(object sender, EventArgs e)
+        {
+            var svc = new CommunityWorkshopService.CWDataServiceSoapClient();
+            var tools = new List<object>();
+            foreach (var row in svc.loadHistoryOfTool(ddlTools.SelectedValue))
+            {
+                var obj = new { row.ToolType, row.WorkStation, row.DateLoaned, row.DateReturn, row.PatronName };
+                tools.Add(obj);
+            }
+            gvShowReports.DataSource = tools;
+            gvShowReports.DataBind();
+            createCSV(tools);
         }
     }
 }
